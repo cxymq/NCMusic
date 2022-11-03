@@ -15,5 +15,9 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func clickbtn(_ sender: Any) {
+        let vc = NCRecommendSongsViewController.init(style: .plain)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 

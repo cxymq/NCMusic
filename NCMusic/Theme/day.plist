@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Global</key>
+	<dict>
+		<key>backgroundColor</key>
+		<string>#ffffff</string>
+		<key>titleColor</key>
+		<string>#000000</string>
+		<key>subtitleColor</key>
+		<string>#757575</string>
+		<key>moreImg</key>
+		<string>more</string>
+		<key>videoImg</key>
+		<string>video</string>
+	</dict>
+	<key>Setting</key>
+	<dict/>
+	<key>themeImg</key>
+	<string>theme</string>
+</dict>
+</plist>
