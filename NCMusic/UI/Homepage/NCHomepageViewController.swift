@@ -28,12 +28,30 @@ class NCHomepageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
 
         setupView()
     }
 
     func setupView() {
-        
+        setupCarouselView()
+    }
+    
+    func setupCarouselView() {
+        let carouselView = CarouselView()
+        view.addSubview(carouselView)
+        carouselView.snp.makeConstraints { make in
+            make.left.equalTo(0)
+            make.right.equalTo(0)
+            make.top.equalTo(100)
+            make.height.equalTo(160)
+        }
+        var carouselData = [CarouselData]()
+        carouselData.append(.init(imageUrl: "http://p1.music.126.net/pN0z3pArqlpKPyUuRC9ykA==/109951167888980089.jpg", url: ""))
+        carouselData.append(.init(imageUrl: "http://p1.music.126.net/NhIdYkmT6sr4SmCqinUs9A==/109951167888972927.jpg", url: ""))
+        carouselData.append(.init(imageUrl: "http://p1.music.126.net/NhIdYkmT6sr4SmCqinUs9A==/109951167888972927.jpg", url: ""))
+
+        carouselView.configureView(with: carouselData)
     }
 }
 

@@ -20,6 +20,9 @@
 		AF24DEA928E69D7E008759F9 /* NCHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24DEA828E69D7E008759F9 /* NCHomepageViewController.swift */; };
 		AF4F5F0E28DABFA00062CE3A /* NCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F5F0D28DABFA00062CE3A /* NCNavigationController.swift */; };
 		AF4F5F1128DC075E0062CE3A /* NCHomepageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F5F1028DC075E0062CE3A /* NCHomepageModel.swift */; };
+		AFAB5B652913DFF700096EBF /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB5B642913DFF700096EBF /* CarouselCell.swift */; };
+		AFAB5B672913E02E00096EBF /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB5B662913E02E00096EBF /* CarouselView.swift */; };
+		AFAB5B6B2914BDDF00096EBF /* NCUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB5B6A2914BDDE00096EBF /* NCUtilities.swift */; };
 		AFB4B79928D881BC0054FA77 /* homepageBlockPage.json in Resources */ = {isa = PBXBuildFile; fileRef = AFB4B79828D881BC0054FA77 /* homepageBlockPage.json */; };
 		AFC75B4C28C84C17006932EC /* NCBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B4B28C84C17006932EC /* NCBaseViewController.swift */; };
 		AFC75B4E28C84C96006932EC /* NCBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B4D28C84C96006932EC /* NCBaseTableViewController.swift */; };
@@ -110,6 +113,9 @@
 		AF24DEA828E69D7E008759F9 /* NCHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCHomepageViewController.swift; sourceTree = "<group>"; };
 		AF4F5F0D28DABFA00062CE3A /* NCNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCNavigationController.swift; sourceTree = "<group>"; };
 		AF4F5F1028DC075E0062CE3A /* NCHomepageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCHomepageModel.swift; sourceTree = "<group>"; };
+		AFAB5B642913DFF700096EBF /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
+		AFAB5B662913E02E00096EBF /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		AFAB5B6A2914BDDE00096EBF /* NCUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCUtilities.swift; sourceTree = "<group>"; };
 		AFB4B79828D881BC0054FA77 /* homepageBlockPage.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = homepageBlockPage.json; sourceTree = "<group>"; };
 		AFC75B4B28C84C17006932EC /* NCBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCBaseViewController.swift; sourceTree = "<group>"; };
 		AFC75B4D28C84C96006932EC /* NCBaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCBaseTableViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +273,8 @@
 		AFB08C4428F81BF5008A9B61 /* Banner */ = {
 			isa = PBXGroup;
 			children = (
+				AFAB5B642913DFF700096EBF /* CarouselCell.swift */,
+				AFAB5B662913E02E00096EBF /* CarouselView.swift */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -351,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				AFC75B8C28D0857F006932EC /* NCStringExtension.swift */,
+				AFAB5B6A2914BDDE00096EBF /* NCUtilities.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -548,6 +557,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFCFE31828D9ADD100199F84 /* NCSettingViewController.swift in Sources */,
+				AFAB5B6B2914BDDF00096EBF /* NCUtilities.swift in Sources */,
+				AFAB5B672913E02E00096EBF /* CarouselView.swift in Sources */,
 				AFC75B8128C8BA82006932EC /* NCRecommendResModel.swift in Sources */,
 				AFC75B7328C89B3B006932EC /* NCBaseCollectionViewController.swift in Sources */,
 				AFC75B6528C88CD2006932EC /* NCNetService.swift in Sources */,
@@ -558,6 +569,7 @@
 				AFC75B4C28C84C17006932EC /* NCBaseViewController.swift in Sources */,
 				AFCFE31B28D9AFA300199F84 /* NCSettingSwitchCell.swift in Sources */,
 				AFC75B8728C8BF1D006932EC /* NCRecommendSongsModel.swift in Sources */,
+				AFAB5B652913DFF700096EBF /* CarouselCell.swift in Sources */,
 				AFC75B6328C8855B006932EC /* NCNetReqManager.swift in Sources */,
 				AF4F5F1128DC075E0062CE3A /* NCHomepageModel.swift in Sources */,
 				AF4F5F0E28DABFA00062CE3A /* NCNavigationController.swift in Sources */,
