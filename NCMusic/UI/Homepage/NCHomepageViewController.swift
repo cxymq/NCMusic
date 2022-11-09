@@ -8,46 +8,20 @@
 import Foundation
 import UIKit
 
-class NCHomepageViewController: UIViewController {
-    private var flowLayout = UICollectionViewFlowLayout()
-    private var collectionView: UICollectionView
-    private var dataSource = [Block]()
+class NCHomepageViewController: NCBaseTableViewController {
     private var homepageBanners = [CarouselData]()
     var carouselView = CarouselView()
-
-    init() {
-        flowLayout.scrollDirection = .horizontal
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-
-        super.init(nibName: nil, bundle: nil)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
 
+        self.navigationItem.title = "首页"
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(NCBannerCell.self, forCellReuseIdentifier: NCBannerCell.standardReuseIdentifier)
         loadData()
-        setupView()
-    }
-
-    func setupView() {
-        setupCarouselView()
-    }
-    
-    func setupCarouselView() {
-        view.addSubview(carouselView)
-        carouselView.snp.makeConstraints { make in
-            make.left.equalTo(0)
-            make.right.equalTo(0)
-            make.top.equalTo(100)
-            make.height.equalTo(160)
-        }
     }
 
     //MARK: - get data
@@ -67,15 +41,14 @@ class NCHomepageViewController: UIViewController {
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     let resultDic = try decoder.decode(NCHomepageModel.self, from: JSONSerialization.data(withJSONObject: dataJson))
 
-                    self.dataSource = resultDic.blocks!
-                    let block:Block = self.dataSource.first!
+                    self.dataSource = resultDic.blocks! as NSArray
+                    let block:Block = self.dataSource.firstObject! as! Block
                     let homepage_banners = block.extInfo?.banners
                     homepage_banners?.forEach({ banner in
                         self.homepageBanners.append(.init(imageUrl: banner.pic ?? "", url: banner.url ?? ""))
                     })
-                    carouselView.configureView(with: homepageBanners)
 
-                    //self.tableView.reloadData()
+                    self.tableView.reloadData()
 
                 } catch let error {
                     print("recommendSongs json error: \(error)")
@@ -87,18 +60,23 @@ class NCHomepageViewController: UIViewController {
     }
 }
 
-extension NCHomepageViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension NCHomepageViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160.0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: NCBannerCell = tableView.dequeueReusableCell(withIdentifier: NCBannerCell.standardReuseIdentifier, for: indexPath) as! NCBannerCell
+        cell.carouselView.configureView(with: homepageBanners)
         return cell
     }
 }
 
-extension NCHomepageViewController: UICollectionViewDelegate {
+extension NCHomepageViewController: UITableViewDelegate {
     
 }
 

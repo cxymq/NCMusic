@@ -23,6 +23,7 @@
 		AFAB5B652913DFF700096EBF /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB5B642913DFF700096EBF /* CarouselCell.swift */; };
 		AFAB5B672913E02E00096EBF /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB5B662913E02E00096EBF /* CarouselView.swift */; };
 		AFAB5B6B2914BDDF00096EBF /* NCUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB5B6A2914BDDE00096EBF /* NCUtilities.swift */; };
+		AFAB5B72291BB8F600096EBF /* NCBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB5B71291BB8F600096EBF /* NCBannerCell.swift */; };
 		AFB4B79928D881BC0054FA77 /* homepageBlockPage.json in Resources */ = {isa = PBXBuildFile; fileRef = AFB4B79828D881BC0054FA77 /* homepageBlockPage.json */; };
 		AFC75B4C28C84C17006932EC /* NCBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B4B28C84C17006932EC /* NCBaseViewController.swift */; };
 		AFC75B4E28C84C96006932EC /* NCBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B4D28C84C96006932EC /* NCBaseTableViewController.swift */; };
@@ -116,6 +117,7 @@
 		AFAB5B642913DFF700096EBF /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
 		AFAB5B662913E02E00096EBF /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		AFAB5B6A2914BDDE00096EBF /* NCUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCUtilities.swift; sourceTree = "<group>"; };
+		AFAB5B71291BB8F600096EBF /* NCBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCBannerCell.swift; sourceTree = "<group>"; };
 		AFB4B79828D881BC0054FA77 /* homepageBlockPage.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = homepageBlockPage.json; sourceTree = "<group>"; };
 		AFC75B4B28C84C17006932EC /* NCBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCBaseViewController.swift; sourceTree = "<group>"; };
 		AFC75B4D28C84C96006932EC /* NCBaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCBaseTableViewController.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 		AFAB5B6C2918F9CD00096EBF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AFAB5B71291BB8F600096EBF /* NCBannerCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				AFCFE31828D9ADD100199F84 /* NCSettingViewController.swift in Sources */,
 				AFAB5B6B2914BDDF00096EBF /* NCUtilities.swift in Sources */,
 				AFAB5B672913E02E00096EBF /* CarouselView.swift in Sources */,
+				AFAB5B72291BB8F600096EBF /* NCBannerCell.swift in Sources */,
 				AFC75B8128C8BA82006932EC /* NCRecommendResModel.swift in Sources */,
 				AFC75B7328C89B3B006932EC /* NCBaseCollectionViewController.swift in Sources */,
 				AFC75B6528C88CD2006932EC /* NCNetService.swift in Sources */,
