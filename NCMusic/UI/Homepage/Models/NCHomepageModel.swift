@@ -26,7 +26,7 @@ struct NCHomepageModel: Codable {
 struct Block: Codable {
     var blockCode, showType: String?
     var dislikeShowType: Int?
-    var extInfo: EXTInfoUnion?
+    var extInfo: PurpleEXTInfo?
     var canClose: Bool?
     var blockStyle: Int?
     var canFeedback: Bool?

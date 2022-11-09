@@ -52,7 +52,7 @@ private extension CarouselCell {
 extension CarouselCell {
     public func configure(imageUrl: String, url: String) {
         imageView.image = UIImage(named: "avatar")
-        let newUrl = imageUrl.imageUrlAddParams(width: 300, height: 160);
+        let newUrl = imageUrl.imageUrlAddParams(width: 1080, height: 420);
         AF.request(newUrl).responseImage { [self] response in
             if case .success(let image) = response.result {
                 self.imageView.image = image

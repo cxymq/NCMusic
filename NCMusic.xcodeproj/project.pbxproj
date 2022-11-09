@@ -240,6 +240,7 @@
 		AF24DEA628E69D20008759F9 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
+				AFAB5B6C2918F9CD00096EBF /* Views */,
 				AF24DEA728E69D2B008759F9 /* Models */,
 				AF24DEA828E69D7E008759F9 /* NCHomepageViewController.swift */,
 			);
@@ -259,6 +260,13 @@
 			children = (
 			);
 			path = SideBar;
+			sourceTree = "<group>";
+		};
+		AFAB5B6C2918F9CD00096EBF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AFB08C4328F81BC8008A9B61 /* Components */ = {

@@ -11,6 +11,9 @@ import UIKit
 class NCHomepageViewController: UIViewController {
     private var flowLayout = UICollectionViewFlowLayout()
     private var collectionView: UICollectionView
+    private var dataSource = [Block]()
+    private var homepageBanners = [CarouselData]()
+    var carouselView = CarouselView()
 
     init() {
         flowLayout.scrollDirection = .horizontal
@@ -19,9 +22,8 @@ class NCHomepageViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         collectionView.delegate = self
         collectionView.dataSource = self
-        
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -30,6 +32,7 @@ class NCHomepageViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
 
+        loadData()
         setupView()
     }
 
@@ -38,7 +41,6 @@ class NCHomepageViewController: UIViewController {
     }
     
     func setupCarouselView() {
-        let carouselView = CarouselView()
         view.addSubview(carouselView)
         carouselView.snp.makeConstraints { make in
             make.left.equalTo(0)
@@ -46,12 +48,42 @@ class NCHomepageViewController: UIViewController {
             make.top.equalTo(100)
             make.height.equalTo(160)
         }
-        var carouselData = [CarouselData]()
-        carouselData.append(.init(imageUrl: "http://p1.music.126.net/pN0z3pArqlpKPyUuRC9ykA==/109951167888980089.jpg", url: ""))
-        carouselData.append(.init(imageUrl: "http://p1.music.126.net/NhIdYkmT6sr4SmCqinUs9A==/109951167888972927.jpg", url: ""))
-        carouselData.append(.init(imageUrl: "http://p1.music.126.net/NhIdYkmT6sr4SmCqinUs9A==/109951167888972927.jpg", url: ""))
+    }
 
-        carouselView.configureView(with: carouselData)
+    //MARK: - get data
+    func loadData() {
+        provider.request(.homepageBlockPage) { [self] result in
+            //print("recommendSongs: \(result)")
+            switch result {
+            case let .success(moyaResponse):
+                let data = moyaResponse.data // Data, your JSON response is probably in here!
+                let statusCode = moyaResponse.statusCode // Int - 200, 401, 500, etc
+                print("recommendSongs statusCode: \(statusCode)")
+                
+                do {
+                    let dataJson = try JSONSerialization.jsonObject(with: data) as! NSDictionary
+
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let resultDic = try decoder.decode(NCHomepageModel.self, from: JSONSerialization.data(withJSONObject: dataJson))
+
+                    self.dataSource = resultDic.blocks!
+                    let block:Block = self.dataSource.first!
+                    let homepage_banners = block.extInfo?.banners
+                    homepage_banners?.forEach({ banner in
+                        self.homepageBanners.append(.init(imageUrl: banner.pic ?? "", url: banner.url ?? ""))
+                    })
+                    carouselView.configureView(with: homepageBanners)
+
+                    //self.tableView.reloadData()
+
+                } catch let error {
+                    print("recommendSongs json error: \(error)")
+                }
+            case let .failure(error):
+                print("recommendSongsErrors: \(error)")
+            }
+        }
     }
 }
 

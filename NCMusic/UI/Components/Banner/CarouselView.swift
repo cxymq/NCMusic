@@ -32,6 +32,7 @@ class CarouselView: UIView {
         pageControl.pageIndicatorTintColor = .gray
         pageControl.currentPageIndicatorTintColor = .white
         pageControl.hidesForSinglePage = true
+        pageControl.isUserInteractionEnabled = false
         return pageControl
     }()
     
