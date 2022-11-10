@@ -10,6 +10,8 @@ import UIKit
 
 class NCHomepageViewController: NCBaseTableViewController {
     private var homepageBanners = [CarouselData]()
+    private var selectedAlbums = [Creative]()
+
     var carouselView = CarouselView()
     
     override func viewDidLoad() {
@@ -21,6 +23,7 @@ class NCHomepageViewController: NCBaseTableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(NCBannerCell.self, forCellReuseIdentifier: NCBannerCell.standardReuseIdentifier)
+        tableView.register(NCSelectedAlbumCell.self, forCellReuseIdentifier: NCSelectedAlbumCell.standardReuseIdentifier)
         loadData()
     }
 
@@ -42,11 +45,15 @@ class NCHomepageViewController: NCBaseTableViewController {
                     let resultDic = try decoder.decode(NCHomepageModel.self, from: JSONSerialization.data(withJSONObject: dataJson))
 
                     self.dataSource = resultDic.blocks! as NSArray
+                    // banners
                     let block:Block = self.dataSource.firstObject! as! Block
                     let homepage_banners = block.extInfo?.banners
                     homepage_banners?.forEach({ banner in
                         self.homepageBanners.append(.init(imageUrl: banner.pic ?? "", url: banner.url ?? ""))
                     })
+                    
+                    // 精选音单
+                    self.selectedAlbums = (self.dataSource[1] as! Block).creatives ?? []
 
                     self.tableView.reloadData()
 
@@ -61,18 +68,67 @@ class NCHomepageViewController: NCBaseTableViewController {
 }
 
 extension NCHomepageViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch section {
+        case 0, 1:
+            return 1
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160.0
+        switch indexPath.section {
+        case 0:
+            return 160.0
+        case 1:
+            return 140.0
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return nil
+        case 1:
+            return "精选音单"
+        default:
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return 0
+        case 1:
+            return 45
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: NCBannerCell = tableView.dequeueReusableCell(withIdentifier: NCBannerCell.standardReuseIdentifier, for: indexPath) as! NCBannerCell
-        cell.carouselView.configureView(with: homepageBanners)
-        return cell
+        switch indexPath.section {
+        case 0:
+            let cell: NCBannerCell = tableView.dequeueReusableCell(withIdentifier: NCBannerCell.standardReuseIdentifier, for: indexPath) as! NCBannerCell
+            cell.carouselView.configureView(with: homepageBanners)
+            return cell
+        case 1:
+            let cell: NCSelectedAlbumCell = tableView.dequeueReusableCell(withIdentifier: NCSelectedAlbumCell.standardReuseIdentifier, for: indexPath) as! NCSelectedAlbumCell
+            cell.albums = selectedAlbums
+            return cell
+        default:
+            let cell: NCBannerCell = tableView.dequeueReusableCell(withIdentifier: NCBannerCell.standardReuseIdentifier, for: indexPath) as! NCBannerCell
+            cell.carouselView.configureView(with: homepageBanners)
+            return cell
+        }
     }
 }
 

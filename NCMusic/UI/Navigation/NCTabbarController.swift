@@ -39,7 +39,7 @@ class NCTabbarController: UITabBarController {
             }
         }
         
-        let homepageVC = NCNavigationController(rootViewController: NCHomepageViewController(style: .plain))
+        let homepageVC = NCNavigationController(rootViewController: NCHomepageViewController(style: .grouped))
         let homepageImg = UIImage(named: "default_tabbar")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         homepageVC.tabBarItem.image = homepageImg;
         let homepageImg_s = UIImage(named: "discover")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
