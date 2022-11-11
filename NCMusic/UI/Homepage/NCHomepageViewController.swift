@@ -24,6 +24,7 @@ class NCHomepageViewController: NCBaseTableViewController {
         tableView.dataSource = self
         tableView.register(NCBannerCell.self, forCellReuseIdentifier: NCBannerCell.standardReuseIdentifier)
         tableView.register(NCSelectedAlbumCell.self, forCellReuseIdentifier: NCSelectedAlbumCell.standardReuseIdentifier)
+        tableView.register(NCSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: NCSectionHeaderView.standardReuseIdentifier)
         loadData()
     }
 
@@ -92,25 +93,32 @@ extension NCHomepageViewController: UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let isMore = true
+        let block = dataSource[section] as! Block
+        let title = block.uiElement?.subTitle?.title ?? ""
         switch section {
         case 0:
             return nil
-        case 1:
-            return "精选音单"
+        case 1: break
         default:
             return nil
         }
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: NCSectionHeaderView.standardReuseIdentifier) as? NCSectionHeaderView else {
+            return nil
+        }
+        headerView.config(title: title, isMore: isMore)
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 0:
-            return 0
+            return 0.1
         case 1:
             return 45
         default:
-            return 0
+            return 0.1
         }
     }
     

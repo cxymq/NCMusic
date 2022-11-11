@@ -23,15 +23,17 @@ class NCNavigationController: UINavigationController {
         }
         
         let navbarFont = UIFont.boldSystemFont(ofSize: 17)
-        self.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont, NSAttributedString.Key.foregroundColor:titleColor]
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont, NSAttributedString.Key.foregroundColor:titleColor]
         
         if #available(iOS 13.0, *) {
             let app = UINavigationBarAppearance()
             app.configureWithDefaultBackground()
             app.theme_backgroundColor = globalBgColor
             app.titleTextAttributes = [NSAttributedString.Key.font: navbarFont, NSAttributedString.Key.foregroundColor:titleColor]
-            self.navigationBar.standardAppearance = app
-            self.navigationBar.scrollEdgeAppearance = app
+            app.shadowColor = .clear
+            app.shadowImage = UIImage()
+            navigationBar.standardAppearance = app
+            navigationBar.scrollEdgeAppearance = app
         }
     }
 }
