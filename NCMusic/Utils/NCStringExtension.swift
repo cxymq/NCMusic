@@ -14,4 +14,25 @@ extension String {
         let param = "param=" + String(format: "%.f", width * scale) + "y" + String(format: "%.f", height * scale);
         return self.appending("?").appending(param)
     }
+    
+    static func playCountToString(count: Int) -> String {
+        var playCount = "0"
+        if (count <= 0) {
+            return playCount
+        } else if (count < 10000) {
+            playCount = String(count)
+        } else if (count < 100000000) {
+            playCount = String(format: "%.1f 万", Double(count) / 10000.0)
+            playCount = playCount.replacingOccurrences(of: ".0", with: "")
+        } else {
+            playCount = String(format: "%.2f", roundf(Float(((Double(count) / 100000 * 100000) / 100000000.0) * 100.0)) / 100.0)
+            if (playCount.contains(".00")) {
+                playCount = playCount.replacingOccurrences(of: ".00", with: "")
+            } else if (playCount.contains(".0")) {
+                playCount = playCount.replacingOccurrences(of: ".0", with: "")
+            }
+            playCount = playCount.appending(" 亿")
+        }
+        return playCount
+    }
 }

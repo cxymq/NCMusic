@@ -69,6 +69,7 @@ extension NCSelectedAlbumCell: UICollectionViewDelegate {
 class NCAlbumCell: UICollectionViewCell {
     private let imgView = UIImageView()
     private let titleLb = UILabel()
+    private let countLb = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -88,6 +89,16 @@ class NCAlbumCell: UICollectionViewCell {
         imgView.snp.makeConstraints { make in
             make.top.left.right.equalTo(0)
             make.height.equalTo(100)
+        }
+        
+        countLb.numberOfLines = 1
+        countLb.font = UIFont.systemFont(ofSize: 10)
+        countLb.textColor = UIColor.white
+        countLb.backgroundColor = .clear
+        imgView.addSubview(countLb)
+        countLb.snp.makeConstraints { make in
+            make.top.equalTo(5)
+            make.right.equalTo(-5)
         }
         
         titleLb.numberOfLines = 2
@@ -111,6 +122,10 @@ class NCAlbumCell: UICollectionViewCell {
                 self.imgView.image = image
             }
         }
+        guard let resource = creative.resources?.first else {
+            return
+        }
+        countLb.text = String.playCountToString(count: resource.resourceEXTInfo?.playCount ?? 0)
 
         titleLb.text = creative.uiElement?.mainTitle?.title
     }
