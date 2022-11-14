@@ -24,7 +24,7 @@ class NCSectionHeaderView: UITableViewHeaderFooterView {
     
     func config(title: String, isMore: Bool) {
         titleLb.text = title
-        if (isMore) {
+        if isMore {
             moreBtn.setTitle("更多", for: .normal)
         } else {
             moreBtn.setTitle("播放", for: .normal)

@@ -30,11 +30,12 @@ class NCSelectedAlbumCell: NCBaseTableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        theme_backgroundColor = globalBgColor
         setupView()
     }
     
     func setupView() {
+        collectionView.theme_backgroundColor = globalBgColor
         collectionView.delegate = self
         collectionView.dataSource = self
         addSubview(collectionView)
@@ -73,7 +74,7 @@ class NCAlbumCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        theme_backgroundColor = globalBgColor
         setupview()
     }
     
@@ -116,7 +117,7 @@ class NCAlbumCell: UICollectionViewCell {
         guard var newUrl = creative.uiElement?.image?.imageURL else {
             return
         }
-        newUrl = newUrl.imageUrlAddParams(width: 200, height: 200);
+        newUrl = newUrl.imageUrlAddParams(width: 100, height: 100);
         AF.request(newUrl).responseImage { [self] response in
             if case .success(let image) = response.result {
                 self.imgView.image = image

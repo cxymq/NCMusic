@@ -26,7 +26,9 @@
 		AFAB5B72291BB8F600096EBF /* NCBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB5B71291BB8F600096EBF /* NCBannerCell.swift */; };
 		AFAB5B74291CA5CA00096EBF /* NCSelectedAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB5B73291CA5CA00096EBF /* NCSelectedAlbumCell.swift */; };
 		AFAB5B76291E25F900096EBF /* NCSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB5B75291E25F900096EBF /* NCSectionHeaderView.swift */; };
+		AFAB5B78291E319700096EBF /* NCRecommendSongsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB5B77291E319700096EBF /* NCRecommendSongsListCell.swift */; };
 		AFB4B79928D881BC0054FA77 /* homepageBlockPage.json in Resources */ = {isa = PBXBuildFile; fileRef = AFB4B79828D881BC0054FA77 /* homepageBlockPage.json */; };
+		AFC1045229223D7300B1204B /* NCStyleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC1045129223D7300B1204B /* NCStyleLayout.swift */; };
 		AFC75B4C28C84C17006932EC /* NCBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B4B28C84C17006932EC /* NCBaseViewController.swift */; };
 		AFC75B4E28C84C96006932EC /* NCBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B4D28C84C96006932EC /* NCBaseTableViewController.swift */; };
 		AFC75B5028C84CDB006932EC /* NCBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B4F28C84CDB006932EC /* NCBaseTableViewCell.swift */; };
@@ -122,7 +124,9 @@
 		AFAB5B71291BB8F600096EBF /* NCBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCBannerCell.swift; sourceTree = "<group>"; };
 		AFAB5B73291CA5CA00096EBF /* NCSelectedAlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCSelectedAlbumCell.swift; sourceTree = "<group>"; };
 		AFAB5B75291E25F900096EBF /* NCSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCSectionHeaderView.swift; sourceTree = "<group>"; };
+		AFAB5B77291E319700096EBF /* NCRecommendSongsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCRecommendSongsListCell.swift; sourceTree = "<group>"; };
 		AFB4B79828D881BC0054FA77 /* homepageBlockPage.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = homepageBlockPage.json; sourceTree = "<group>"; };
+		AFC1045129223D7300B1204B /* NCStyleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCStyleLayout.swift; sourceTree = "<group>"; };
 		AFC75B4B28C84C17006932EC /* NCBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCBaseViewController.swift; sourceTree = "<group>"; };
 		AFC75B4D28C84C96006932EC /* NCBaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCBaseTableViewController.swift; sourceTree = "<group>"; };
 		AFC75B4F28C84CDB006932EC /* NCBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCBaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -273,7 +277,9 @@
 			children = (
 				AFAB5B71291BB8F600096EBF /* NCBannerCell.swift */,
 				AFAB5B73291CA5CA00096EBF /* NCSelectedAlbumCell.swift */,
+				AFAB5B77291E319700096EBF /* NCRecommendSongsListCell.swift */,
 				AFAB5B75291E25F900096EBF /* NCSectionHeaderView.swift */,
+				AFC1045129223D7300B1204B /* NCStyleLayout.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -598,7 +604,9 @@
 				AFC75B7E28C8BA5A006932EC /* NCRecommendResCell.swift in Sources */,
 				AF138E9628AB9EF300DFBE79 /* ViewController.swift in Sources */,
 				AFC75B6128C88458006932EC /* NCUrlConstsnt.swift in Sources */,
+				AFC1045229223D7300B1204B /* NCStyleLayout.swift in Sources */,
 				AF138E9228AB9EF300DFBE79 /* AppDelegate.swift in Sources */,
+				AFAB5B78291E319700096EBF /* NCRecommendSongsListCell.swift in Sources */,
 				AFC75B4E28C84C96006932EC /* NCBaseTableViewController.swift in Sources */,
 				AFC75B5328C850EA006932EC /* ReuseIdentifierProviding.swift in Sources */,
 				AFAB5B76291E25F900096EBF /* NCSectionHeaderView.swift in Sources */,
