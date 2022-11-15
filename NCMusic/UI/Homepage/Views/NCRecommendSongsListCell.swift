@@ -14,7 +14,7 @@ class NCRecommendSongsListCell: NCBaseTableViewCell {
     
     private let collectionView: UICollectionView = {
         let layout = NCStyleLayout()
-        layout.itemSize = CGSize(width: NCScreenW - 10 - 30 - 10, height: 200)
+        layout.itemSize = CGSize(width: NCScreenW - 30 - 20, height: 200)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         layout.scrollDirection = .horizontal
@@ -54,39 +54,7 @@ class NCRecommendSongsListCell: NCBaseTableViewCell {
     }
 }
 
-extension NCRecommendSongsListCell: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-    }
-    
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        offSetX = scrollView.contentOffset.x;
-    }
-    
-    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        if (fabs(scrollView.contentOffset.x - offSetX) > 10) {
-            //scrollToNextPageOrLastPage(scrollView: scrollView)
-        }
-    }
-    
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if (fabs(scrollView.contentOffset.x - offSetX) > 10) {
-            //scrollToNextPageOrLastPage(scrollView: scrollView)
-        }
-    }
-    
-    func scrollToNextPageOrLastPage(scrollView: UIScrollView) {
-        var scale = Int(scrollView.contentOffset.x / (NCScreenW - 10 - 30 - 10))
-        if (scrollView.contentOffset.x > offSetX) {
-            scale = scale + 1
-        }
-        guard scale > songs.count - 1 else {
-            let index = NSIndexPath(item: Int(scale), section: 0) as IndexPath
-            collectionView.scrollToItem(at: index, at: .left, animated: true)
-            return
-        }
-    }
-}
+extension NCRecommendSongsListCell: UIScrollViewDelegate {}
 
 extension NCRecommendSongsListCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -101,9 +69,7 @@ extension NCRecommendSongsListCell: UICollectionViewDataSource {
     }
 }
 
-extension NCRecommendSongsListCell: UICollectionViewDelegate {
-    
-}
+extension NCRecommendSongsListCell: UICollectionViewDelegate {}
 
 class NCSongsCell: UICollectionViewCell {
     private let songsView1 = UIView()
@@ -245,97 +211,88 @@ class NCSongsCell: UICollectionViewCell {
             return
         }
         let res1 = resources[0]
-        guard var newUrl = res1.uiElement?.image?.imageURL else {
-            return
-        }
-        newUrl = newUrl.imageUrlAddParams(width: 45, height: 45);
-        AF.request(newUrl).responseImage {[self] response in
-            if case .success(let image) = response.result {
-                self.picImgView1.image = image
+        if var newUrl = res1.uiElement?.image?.imageURL {
+            newUrl = newUrl.imageUrlAddParams(width: 45, height: 45);
+            AF.request(newUrl).responseImage {[self] response in
+                if case .success(let image) = response.result {
+                    self.picImgView1.image = image
+                }
             }
         }
 
         var title = res1.uiElement?.mainTitle?.title ?? ""
         var names: String = title
         names.append(" - ")
-        guard let artists = res1.resourceEXTInfo?.artists else {
-            return
+        if let artists = res1.resourceEXTInfo?.artists {
+            artists.forEach { ar in
+                names.append(ar.name!)
+                names.append("/")
+            }
+            if names.count > 0 {
+                names.remove(at: names.index(before: names.endIndex))
+            }
+            titleLb1.text = names
         }
-        artists.forEach { ar in
-            names.append(ar.name!)
-            names.append("/")
+
+        if let subTitle = res1.uiElement?.subTitle?.title {
+            subTitleLb1.text = subTitle
         }
-        if names.count > 0 {
-            names.remove(at: names.index(before: names.endIndex))
-        }
-        titleLb1.text = names
-        
-        guard let subTitle = res1.uiElement?.subTitle?.title else {
-            return
-        }
-        subTitleLb1.text = subTitle
 
         let res2 = resources[1]
-        guard var newUrl = res2.uiElement?.image?.imageURL else {
-            return
-        }
-        newUrl = newUrl.imageUrlAddParams(width: 45, height: 45);
-        AF.request(newUrl).responseImage {[self] response in
-            if case .success(let image) = response.result {
-                self.picImgView2.image = image
+        if var newUrl = res2.uiElement?.image?.imageURL {
+            newUrl = newUrl.imageUrlAddParams(width: 45, height: 45);
+            AF.request(newUrl).responseImage {[self] response in
+                if case .success(let image) = response.result {
+                    self.picImgView2.image = image
+                }
             }
         }
 
         title = res2.uiElement?.mainTitle?.title ?? ""
         names = title
         names.append(" - ")
-        guard let artists = res2.resourceEXTInfo?.artists else {
-            return
+        if let artists = res2.resourceEXTInfo?.artists {
+            artists.forEach { ar in
+                names.append(ar.name!)
+                names.append("/")
+            }
+            if names.count > 0 {
+                names.remove(at: names.index(before: names.endIndex))
+            }
+            titleLb2.text = names
         }
-        artists.forEach { ar in
-            names.append(ar.name!)
-            names.append("/")
+
+        if let subTitle = res2.uiElement?.subTitle?.title {
+            subTitleLb2.text = subTitle
         }
-        if names.count > 0 {
-            names.remove(at: names.index(before: names.endIndex))
-        }
-        titleLb2.text = names
-        
-        guard let subTitle = res2.uiElement?.subTitle?.title else {
-            return
-        }
-        subTitleLb2.text = subTitle
 
         let res3 = resources[2]
-        guard var newUrl = res3.uiElement?.image?.imageURL else {
-            return
-        }
-        newUrl = newUrl.imageUrlAddParams(width: 45, height: 45);
-        AF.request(newUrl).responseImage {[self] response in
-            if case .success(let image) = response.result {
-                self.picImgView3.image = image
+        if var newUrl = res3.uiElement?.image?.imageURL {
+            newUrl = newUrl.imageUrlAddParams(width: 45, height: 45);
+            AF.request(newUrl).responseImage {[self] response in
+                if case .success(let image) = response.result {
+                    self.picImgView3.image = image
+                }
             }
         }
 
         title = res3.uiElement?.mainTitle?.title ?? ""
         names = title
         names.append(" - ")
-        guard let artists = res3.resourceEXTInfo?.artists else {
-            return
+        if let artists = res3.resourceEXTInfo?.artists {
+            artists.forEach { ar in
+                names.append(ar.name!)
+                names.append("/")
+            }
+            if names.count > 0 {
+                names.remove(at: names.index(before: names.endIndex))
+            }
+            titleLb3.text = names
         }
-        artists.forEach { ar in
-            names.append(ar.name!)
-            names.append("/")
+
+        if let subTitle = res3.uiElement?.subTitle?.title {
+            subTitleLb3.text = subTitle
         }
-        if names.count > 0 {
-            names.remove(at: names.index(before: names.endIndex))
-        }
-        titleLb3.text = names
-        
-        guard let subTitle = res3.uiElement?.subTitle?.title else {
-            return
-        }
-        subTitleLb3.text = subTitle
     }
 }
 
