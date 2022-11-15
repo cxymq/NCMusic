@@ -29,6 +29,7 @@
 		AFAB5B78291E319700096EBF /* NCRecommendSongsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB5B77291E319700096EBF /* NCRecommendSongsListCell.swift */; };
 		AFB4B79928D881BC0054FA77 /* homepageBlockPage.json in Resources */ = {isa = PBXBuildFile; fileRef = AFB4B79828D881BC0054FA77 /* homepageBlockPage.json */; };
 		AFC1045229223D7300B1204B /* NCStyleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC1045129223D7300B1204B /* NCStyleLayout.swift */; };
+		AFC104542923371800B1204B /* NCHomepageBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC104532923371800B1204B /* NCHomepageBtnCell.swift */; };
 		AFC75B4C28C84C17006932EC /* NCBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B4B28C84C17006932EC /* NCBaseViewController.swift */; };
 		AFC75B4E28C84C96006932EC /* NCBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B4D28C84C96006932EC /* NCBaseTableViewController.swift */; };
 		AFC75B5028C84CDB006932EC /* NCBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B4F28C84CDB006932EC /* NCBaseTableViewCell.swift */; };
@@ -127,6 +128,7 @@
 		AFAB5B77291E319700096EBF /* NCRecommendSongsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCRecommendSongsListCell.swift; sourceTree = "<group>"; };
 		AFB4B79828D881BC0054FA77 /* homepageBlockPage.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = homepageBlockPage.json; sourceTree = "<group>"; };
 		AFC1045129223D7300B1204B /* NCStyleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCStyleLayout.swift; sourceTree = "<group>"; };
+		AFC104532923371800B1204B /* NCHomepageBtnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCHomepageBtnCell.swift; sourceTree = "<group>"; };
 		AFC75B4B28C84C17006932EC /* NCBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCBaseViewController.swift; sourceTree = "<group>"; };
 		AFC75B4D28C84C96006932EC /* NCBaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCBaseTableViewController.swift; sourceTree = "<group>"; };
 		AFC75B4F28C84CDB006932EC /* NCBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCBaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				AFAB5B71291BB8F600096EBF /* NCBannerCell.swift */,
 				AFAB5B73291CA5CA00096EBF /* NCSelectedAlbumCell.swift */,
 				AFAB5B77291E319700096EBF /* NCRecommendSongsListCell.swift */,
+				AFC104532923371800B1204B /* NCHomepageBtnCell.swift */,
 				AFAB5B75291E25F900096EBF /* NCSectionHeaderView.swift */,
 				AFC1045129223D7300B1204B /* NCStyleLayout.swift */,
 			);
@@ -580,6 +583,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFCFE31828D9ADD100199F84 /* NCSettingViewController.swift in Sources */,
+				AFC104542923371800B1204B /* NCHomepageBtnCell.swift in Sources */,
 				AFAB5B6B2914BDDF00096EBF /* NCUtilities.swift in Sources */,
 				AFAB5B672913E02E00096EBF /* CarouselView.swift in Sources */,
 				AFAB5B72291BB8F600096EBF /* NCBannerCell.swift in Sources */,

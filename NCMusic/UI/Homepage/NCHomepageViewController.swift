@@ -25,6 +25,7 @@ class NCHomepageViewController: NCBaseTableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(NCBannerCell.self, forCellReuseIdentifier: NCBannerCell.standardReuseIdentifier)
+        tableView.register(NCHomepageBtnCell.self, forCellReuseIdentifier: NCHomepageBtnCell.standardReuseIdentifier)
         tableView.register(NCSelectedAlbumCell.self, forCellReuseIdentifier: NCSelectedAlbumCell.standardReuseIdentifier)
         tableView.register(NCRecommendSongsListCell.self, forCellReuseIdentifier: NCRecommendSongsListCell.standardReuseIdentifier)
 
@@ -80,12 +81,12 @@ class NCHomepageViewController: NCBaseTableViewController {
 
 extension NCHomepageViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0, 1, 2, 3:
+        case 0, 1, 2, 3, 4:
             return 1
         default:
             return 0
@@ -96,9 +97,11 @@ extension NCHomepageViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             return 160.0
-        case 1, 3:
+        case 1:
+            return 60.0
+        case 2, 4:
             return 140.0
-        case 2:
+        case 3:
             return 200.0
         default:
             return 0
@@ -107,17 +110,17 @@ extension NCHomepageViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var isMore = true
-        let block = dataSource[section] as! Block
-        let title = block.uiElement?.subTitle?.title ?? ""
         switch section {
-        case 0:
+        case 0, 1:
             return nil
-        case 1, 3: break
-        case 2:
+        case 2, 4: break
+        case 3:
             isMore = false
         default:
             return nil
         }
+        let block = dataSource[section - 1] as! Block
+        let title = block.uiElement?.subTitle?.title ?? ""
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: NCSectionHeaderView.standardReuseIdentifier) as? NCSectionHeaderView else {
             return nil
         }
@@ -127,9 +130,9 @@ extension NCHomepageViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
-        case 0:
+        case 0, 1:
             return 0.1
-        case 1, 2, 3:
+        case 2, 3, 4:
             return 45
         default:
             return 0.1
@@ -143,14 +146,18 @@ extension NCHomepageViewController: UITableViewDataSource {
             cell.carouselView.configureView(with: homepageBanners)
             return cell
         case 1:
+            let cell: NCHomepageBtnCell = tableView.dequeueReusableCell(withIdentifier: NCHomepageBtnCell.standardReuseIdentifier, for: indexPath) as! NCHomepageBtnCell
+            
+            return cell
+        case 2:
             let cell: NCSelectedAlbumCell = tableView.dequeueReusableCell(withIdentifier: NCSelectedAlbumCell.standardReuseIdentifier, for: indexPath) as! NCSelectedAlbumCell
             cell.albums = selectedAlbums
             return cell
-        case 2:
+        case 3:
             let cell: NCRecommendSongsListCell = tableView.dequeueReusableCell(withIdentifier: NCRecommendSongsListCell.standardReuseIdentifier, for: indexPath) as! NCRecommendSongsListCell
             cell.songs = recommendSongs
             return cell
-        case 3:
+        case 4:
             let cell: NCSelectedAlbumCell = tableView.dequeueReusableCell(withIdentifier: NCSelectedAlbumCell.standardReuseIdentifier, for: indexPath) as! NCSelectedAlbumCell
             cell.albums = radarAlbums
             return cell

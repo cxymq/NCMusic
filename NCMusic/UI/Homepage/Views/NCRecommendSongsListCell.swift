@@ -10,8 +10,6 @@ import UIKit
 import Alamofire
 
 class NCRecommendSongsListCell: NCBaseTableViewCell {
-    private var offSetX = 0.0
-    
     private let collectionView: UICollectionView = {
         let layout = NCStyleLayout()
         layout.itemSize = CGSize(width: NCScreenW - 30 - 20, height: 200)
@@ -53,8 +51,6 @@ class NCRecommendSongsListCell: NCBaseTableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-extension NCRecommendSongsListCell: UIScrollViewDelegate {}
 
 extension NCRecommendSongsListCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
