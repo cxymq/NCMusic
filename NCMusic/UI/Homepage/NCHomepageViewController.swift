@@ -12,6 +12,7 @@ class NCHomepageViewController: NCBaseTableViewController {
     private var homepageBanners = [CarouselData]()
     private var selectedAlbums = [Creative]()
     private var recommendSongs = [Creative]()
+    private var radarAlbums = [Creative]()
 
     var carouselView = CarouselView()
     
@@ -61,6 +62,9 @@ class NCHomepageViewController: NCBaseTableViewController {
                     
                     // 推荐
                     self.recommendSongs = (self.dataSource[2] as! Block).creatives ?? []
+                    
+                    // 雷达歌单
+                    self.radarAlbums = (self.dataSource[3] as! Block).creatives ?? []
 
                     self.tableView.reloadData()
 
@@ -76,12 +80,12 @@ class NCHomepageViewController: NCBaseTableViewController {
 
 extension NCHomepageViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0, 1, 2:
+        case 0, 1, 2, 3:
             return 1
         default:
             return 0
@@ -92,7 +96,7 @@ extension NCHomepageViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             return 160.0
-        case 1:
+        case 1, 3:
             return 140.0
         case 2:
             return 200.0
@@ -108,7 +112,7 @@ extension NCHomepageViewController: UITableViewDataSource {
         switch section {
         case 0:
             return nil
-        case 1: break
+        case 1, 3: break
         case 2:
             isMore = false
         default:
@@ -125,7 +129,7 @@ extension NCHomepageViewController: UITableViewDataSource {
         switch section {
         case 0:
             return 0.1
-        case 1, 2:
+        case 1, 2, 3:
             return 45
         default:
             return 0.1
@@ -145,6 +149,10 @@ extension NCHomepageViewController: UITableViewDataSource {
         case 2:
             let cell: NCRecommendSongsListCell = tableView.dequeueReusableCell(withIdentifier: NCRecommendSongsListCell.standardReuseIdentifier, for: indexPath) as! NCRecommendSongsListCell
             cell.songs = recommendSongs
+            return cell
+        case 3:
+            let cell: NCSelectedAlbumCell = tableView.dequeueReusableCell(withIdentifier: NCSelectedAlbumCell.standardReuseIdentifier, for: indexPath) as! NCSelectedAlbumCell
+            cell.albums = radarAlbums
             return cell
         default:
             let cell: NCBannerCell = tableView.dequeueReusableCell(withIdentifier: NCBannerCell.standardReuseIdentifier, for: indexPath) as! NCBannerCell
