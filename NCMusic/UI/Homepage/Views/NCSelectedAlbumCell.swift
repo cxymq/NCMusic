@@ -118,7 +118,8 @@ class NCAlbumCell: UICollectionViewCell {
             return
         }
         newUrl = newUrl.imageUrlAddParams(width: 100, height: 100);
-        AF.request(newUrl).responseImage { [self] response in
+        AF.request(newUrl).responseImage { [weak self] response in
+            guard let self = self else { return }
             if case .success(let image) = response.result {
                 self.imgView.image = image
             }

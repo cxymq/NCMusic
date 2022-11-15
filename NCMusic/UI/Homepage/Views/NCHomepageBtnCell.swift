@@ -28,6 +28,8 @@ class NCHomepageBtnCell: NCBaseTableViewCell {
         }
     }
 
+    var btnSelectedHandle:((NCHomepageBtnCell, Int) -> Void)?
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         theme_backgroundColor = globalBgColor
@@ -72,7 +74,11 @@ extension NCHomepageBtnCell: UICollectionViewDataSource {
     }
 }
 
-extension NCHomepageBtnCell: UICollectionViewDelegate {}
+extension NCHomepageBtnCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        btnSelectedHandle?(self, indexPath.item)
+    }
+}
 
 class NCHomeBtnCell: UICollectionViewCell {
     private let picImgView = UIImageView()

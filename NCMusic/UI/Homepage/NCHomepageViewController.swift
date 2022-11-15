@@ -147,7 +147,15 @@ extension NCHomepageViewController: UITableViewDataSource {
             return cell
         case 1:
             let cell: NCHomepageBtnCell = tableView.dequeueReusableCell(withIdentifier: NCHomepageBtnCell.standardReuseIdentifier, for: indexPath) as! NCHomepageBtnCell
-            
+            cell.btnSelectedHandle = { [weak self] (vc, item) in
+                guard let self = self else { return }
+                switch item {
+                case 0:
+                    self.navigationController?.pushViewController(NCRecommendSongsViewController(style: .plain), animated: true)
+                default:
+                    break
+                }
+            }
             return cell
         case 2:
             let cell: NCSelectedAlbumCell = tableView.dequeueReusableCell(withIdentifier: NCSelectedAlbumCell.standardReuseIdentifier, for: indexPath) as! NCSelectedAlbumCell

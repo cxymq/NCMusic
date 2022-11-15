@@ -209,7 +209,8 @@ class NCSongsCell: UICollectionViewCell {
         let res1 = resources[0]
         if var newUrl = res1.uiElement?.image?.imageURL {
             newUrl = newUrl.imageUrlAddParams(width: 45, height: 45);
-            AF.request(newUrl).responseImage {[self] response in
+            AF.request(newUrl).responseImage {[weak self] response in
+                guard let self = self else { return }
                 if case .success(let image) = response.result {
                     self.picImgView1.image = image
                 }
@@ -237,7 +238,8 @@ class NCSongsCell: UICollectionViewCell {
         let res2 = resources[1]
         if var newUrl = res2.uiElement?.image?.imageURL {
             newUrl = newUrl.imageUrlAddParams(width: 45, height: 45);
-            AF.request(newUrl).responseImage {[self] response in
+            AF.request(newUrl).responseImage {[weak self] response in
+                guard let self = self else { return }
                 if case .success(let image) = response.result {
                     self.picImgView2.image = image
                 }
@@ -265,7 +267,8 @@ class NCSongsCell: UICollectionViewCell {
         let res3 = resources[2]
         if var newUrl = res3.uiElement?.image?.imageURL {
             newUrl = newUrl.imageUrlAddParams(width: 45, height: 45);
-            AF.request(newUrl).responseImage {[self] response in
+            AF.request(newUrl).responseImage {[weak self] response in
+                guard let self = self else { return }
                 if case .success(let image) = response.result {
                     self.picImgView3.image = image
                 }
