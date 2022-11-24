@@ -27,6 +27,8 @@ class NCTabbarController: UITabBarController {
             let app = UITabBarAppearance()
             app.configureWithDefaultBackground()
             app.theme_backgroundColor = globalBgColor
+            app.shadowColor = .clear
+            app.shadowImage = UIImage()
 
             let tabBarItemAppearance = UITabBarItemAppearance()
             tabBarItemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.font: barbuttonFont, NSAttributedString.Key.foregroundColor: titleColor]
