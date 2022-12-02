@@ -1,45 +1,44 @@
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
 //
-//  NCHomepageModel.swift
-//  NCMusic
-//
-//  Created by nazimai on 2022/9/22.
-//
+//   let nCHomepageModel = try? newJSONDecoder().decode(NCHomepageModel.self, from: jsonData)
 
 import Foundation
 
 // MARK: - NCHomepageModel
 struct NCHomepageModel: Codable {
-    var cursor: String?
-    var blocks: [Block]?
-    var hasMore: Bool?
-    var blockUUIDs: JSONNull?
-    var pageConfig: PageConfig?
-    var guideToast: GuideToast?
-    var internalTest: JSONNull?
-    var titles: [JSONAny]?
-    var blockCodeOrderList: JSONNull?
-    var exposedResource: String?
-    var demote: Bool?
+    let cursor: String?
+    let blocks: [Block]?
+    let hasMore: Bool?
+    let blockUUIDs: JSONNull?
+    let pageConfig: PageConfig?
+    let guideToast: GuideToast?
+    let internalTest: JSONNull?
+    let titles: [JSONAny]?
+    let blockCodeOrderList: JSONNull?
+    let exposedResource: String?
+    let demote: Bool?
 }
 
 // MARK: - Block
 struct Block: Codable {
-    var blockCode, showType: String?
-    var dislikeShowType: Int?
-    var extInfo: PurpleEXTInfo?
-    var canClose: Bool?
-    var blockStyle: Int?
-    var canFeedback: Bool?
-    var action: String?
-    var actionType: ActionType?
-    var uiElement: BlockUIElement?
-    var creatives: [Creative]?
-    var alg, logInfo: String?
-    var resourceIDList: [String]?
+    let blockCode, showType: String?
+    let dislikeShowType: Int?
+    let extInfo: EXTInfoUnion?
+    let canClose: Bool?
+    let blockStyle: Int?
+    let canFeedback, blockDemote: Bool?
+    let action: String?
+    let actionType: ActionType?
+    let uiElement: BlockUIElement?
+    let creatives: [Creative]?
+    let resourceIDList: [String]?
+    let alg, logInfo: String?
 
     enum CodingKeys: String, CodingKey {
-        case blockCode, showType, dislikeShowType, extInfo, canClose, blockStyle, canFeedback, action, actionType, uiElement, creatives, alg, logInfo
+        case blockCode, showType, dislikeShowType, extInfo, canClose, blockStyle, canFeedback, blockDemote, action, actionType, uiElement, creatives
         case resourceIDList = "resourceIdList"
+        case alg, logInfo
     }
 }
 
@@ -50,13 +49,13 @@ enum ActionType: String, Codable {
 
 // MARK: - Creative
 struct Creative: Codable {
-    var creativeType: CreativeType?
-    var creativeID, action: String?
-    var actionType: ActionType?
-    var uiElement: ResourceUIElement?
-    var resources: [Resource]?
-    var alg, logInfo: String?
-    var position: Int?
+    let creativeType: CreativeType?
+    let creativeID, action: String?
+    let actionType: ActionType?
+    let uiElement: ResourceUIElement?
+    let resources: [Resource]?
+    let alg, logInfo: String?
+    let position: Int?
 
     enum CodingKeys: String, CodingKey {
         case creativeType
@@ -73,50 +72,51 @@ enum CreativeType: String, Codable {
 
 // MARK: - Resource
 struct Resource: Codable {
-    var uiElement: ResourceUIElement?
-    var resourceType: ResourceType?
-    var resourceState: JSONNull?
-    var resourceID: String?
-    var resourceURL: JSONNull?
-    var resourceEXTInfo: ResourceEXTInfo?
-    var action: String?
-    var actionType: ActionType?
-    var valid: Bool?
-    var alg: String?
-    var logInfo: String?
-    var ctrp, resourceContentList: JSONNull?
+    let uiElement: ResourceUIElement?
+    let resourceType: ResourceType?
+    let resourceState: JSONNull?
+    let resourceID: String?
+    let resourceURL: JSONNull?
+    let resourceEXTInfo: ResourceEXTInfo?
+    let action: String?
+    let actionType: ActionType?
+    let valid: Bool?
+    let alg: String?
+    let logInfo: String?
+    let ctrp, likedCount, replyCount, resourceContentList: JSONNull?
+    let position, playParams: JSONNull?
 
     enum CodingKeys: String, CodingKey {
         case uiElement, resourceType, resourceState
         case resourceID = "resourceId"
         case resourceURL = "resourceUrl"
         case resourceEXTInfo = "resourceExtInfo"
-        case action, actionType, valid, alg, logInfo, ctrp, resourceContentList
+        case action, actionType, valid, alg, logInfo, ctrp, likedCount, replyCount, resourceContentList, position, playParams
     }
 }
 
 // MARK: - ResourceEXTInfo
 struct ResourceEXTInfo: Codable {
-    var playCount: Int?
-    var highQuality: Bool?
-    var specialType: Int?
-    var artists: [Artist]?
-    var song: ResourceEXTInfoSong?
-    var songData: SongData?
-    var songPrivilege: SongPrivilege?
-    var commentSimpleData: CommentSimpleData?
+    let playCount: Int?
+    let highQuality: Bool?
+    let specialType: Int?
+    let artists: [Artist]?
+    let song: ResourceEXTInfoSong?
+    let songData: SongData?
+    let songPrivilege: SongPrivilege?
+    let commentSimpleData: CommentSimpleData?
 }
 
 // MARK: - Artist
 struct Artist: Codable {
-    var name: String?
-    var id, picID, img1V1ID: Int?
-    var briefDesc: String?
-    var picURL, img1V1URL: String?
-    var albumSize: Int?
-    var alias: [JSONAny]?
-    var trans: String?
-    var musicSize, topicPerson: Int?
+    let name: String?
+    let id, picID, img1V1ID: Int?
+    let briefDesc: String?
+    let picURL, img1V1URL: String?
+    let albumSize: Int?
+    let alias: [JSONAny]?
+    let trans: String?
+    let musicSize, topicPerson: Int?
 
     enum CodingKeys: String, CodingKey {
         case name, id
@@ -131,11 +131,11 @@ struct Artist: Codable {
 
 // MARK: - CommentSimpleData
 struct CommentSimpleData: Codable {
-    var content: String?
-    var commentID: Int?
-    var threadID: String?
-    var userID: Int?
-    var userName: String?
+    let content: String?
+    let commentID: Int?
+    let threadID: String?
+    let userID: Int?
+    let userName: String?
 
     enum CodingKeys: String, CodingKey {
         case content
@@ -148,37 +148,38 @@ struct CommentSimpleData: Codable {
 
 // MARK: - ResourceEXTInfoSong
 struct ResourceEXTInfoSong: Codable {
-    var name: String?
-    var id, pst, t: Int?
-    var ar: [Ar]?
-    var alia: [JSONAny]?
-    var pop, st: Int?
-    var rt: String?
-    var fee, v: Int?
-    var crbt: JSONNull?
-    var cf: String?
-    var al: Al?
-    var dt: Int?
-    var h, m, l: H?
-    var sq, hr: H?
-    var a: JSONNull?
-    var cd: String?
-    var no: Int?
-    var rtURL: JSONNull?
-    var ftype: Int?
-    var rtUrls: [JSONAny]?
-    var djID, copyright, sID, mark: Int?
-    var originCoverType: Int?
-    var originSongSimpleData, tagPicList: JSONNull?
-    var resourceState: Bool?
-    var version: Int?
-    var songJumpInfo, entertainmentTags: JSONNull?
-    var single: Int?
-    var noCopyrightRcmd: JSONNull?
-    var rtype: Int?
-    var rurl: JSONNull?
-    var mst, cp, mv, publishTime: Int?
-    var videoInfo: VideoInfo?
+    let name: String?
+    let id, pst, t: Int?
+    let ar: [Ar]?
+    let alia: [JSONAny]?
+    let pop, st: Int?
+    let rt: Rt?
+    let fee, v: Int?
+    let crbt: JSONNull?
+    let cf: String?
+    let al: Al?
+    let dt: Int?
+    let h: L?
+    let m, l: L?
+    let sq, hr: L?
+    let a: JSONNull?
+    let cd: String?
+    let no: Int?
+    let rtURL: JSONNull?
+    let ftype: Int?
+    let rtUrls: [JSONAny]?
+    let djID, copyright, sID, mark: Int?
+    let originCoverType: Int?
+    let originSongSimpleData, tagPicList: JSONNull?
+    let resourceState: Bool?
+    let version: Int?
+    let songJumpInfo, entertainmentTags: JSONNull?
+    let single: Int?
+    let noCopyrightRcmd: JSONNull?
+    let rtype: Int?
+    let rurl: JSONNull?
+    let mst, cp, mv, publishTime: Int?
+    let videoInfo: VideoInfo?
 
     enum CodingKeys: String, CodingKey {
         case name, id, pst, t, ar, alia, pop, st, rt, fee, v, crbt, cf, al, dt, h, m, l, sq, hr, a, cd, no
@@ -191,21 +192,32 @@ struct ResourceEXTInfoSong: Codable {
     }
 }
 
+// MARK: - L
+struct L: Codable {
+    let br, fid, size, vd: Int?
+    let sr: Int?
+}
+
+enum Rt: String, Codable {
+    case empty = ""
+    case the600902000008749538 = "600902000008749538"
+}
+
 // MARK: - VideoInfo
 struct VideoInfo: Codable {
-    var moreThanOne: Bool?
-    var video: Video?
+    let moreThanOne: Bool?
+    let video: Video?
 }
 
 // MARK: - Video
 struct Video: Codable {
-    var vid: String?
-    var type: Int?
-    var title: String?
-    var playTime: Int?
-    var coverURL: String?
-    var publishTime: Int?
-    var artists, alias: JSONNull?
+    let vid: String?
+    let type: Int?
+    let title: String?
+    let playTime: Int?
+    let coverURL: String?
+    let publishTime: Int?
+    let artists, alias: JSONNull?
 
     enum CodingKeys: String, CodingKey {
         case vid, type, title, playTime
@@ -216,34 +228,37 @@ struct Video: Codable {
 
 // MARK: - SongData
 struct SongData: Codable {
-    var name: String?
-    var id, position: Int?
-    var alias: [JSONAny]?
-    var status, fee, copyrightID: Int?
-    var disc: String?
-    var no: Int?
-    var artists: [Artist]?
-    var album: Album?
-    var starred: Bool?
-    var popularity, score, starredNum, duration: Int?
-    var playedNum, dayPlays, hearTime: Int?
-    var sqMusic, hrMusic: Music?
-    var ringtone: String?
-    var crbt, audition: JSONNull?
-    var copyFrom, commentThreadID: String?
-    var rtURL: JSONNull?
-    var ftype: Int?
-    var rtUrls: [JSONAny]?
-    var copyright: Int?
-    var transName, sign: JSONNull?
-    var mark, originCoverType: Int?
-    var originSongSimpleData: JSONNull?
-    var single: Int?
-    var noCopyrightRcmd: JSONNull?
-    var rtype: Int?
-    var rurl, mp3URL: JSONNull?
-    var hMusic, mMusic, lMusic, bMusic: Music?
-    var mvid: Int?
+    let name: String?
+    let id, position: Int?
+    let alias: [JSONAny]?
+    let status, fee, copyrightID: Int?
+    let disc: String?
+    let no: Int?
+    let artists: [Artist]?
+    let album: Album?
+    let starred: Bool?
+    let popularity, score, starredNum, duration: Int?
+    let playedNum, dayPlays, hearTime: Int?
+    let sqMusic, hrMusic: Music?
+    let ringtone: Rt?
+    let crbt, audition: JSONNull?
+    let copyFrom, commentThreadID: String?
+    let rtURL: JSONNull?
+    let ftype: Int?
+    let rtUrls: [JSONAny]?
+    let copyright: Int?
+    let transName, sign: JSONNull?
+    let mark, originCoverType: Int?
+    let originSongSimpleData: JSONNull?
+    let single: Int?
+    let noCopyrightRcmd: JSONNull?
+    let bMusic: Music?
+    let mp3URL: JSONNull?
+    let rtype: Int?
+    let rurl: JSONNull?
+    let mvid: Int?
+    let hMusic: Music?
+    let mMusic, lMusic: Music?
 
     enum CodingKeys: String, CodingKey {
         case name, id, position, alias, status, fee
@@ -251,38 +266,37 @@ struct SongData: Codable {
         case disc, no, artists, album, starred, popularity, score, starredNum, duration, playedNum, dayPlays, hearTime, sqMusic, hrMusic, ringtone, crbt, audition, copyFrom
         case commentThreadID = "commentThreadId"
         case rtURL = "rtUrl"
-        case ftype, rtUrls, copyright, transName, sign, mark, originCoverType, originSongSimpleData, single, noCopyrightRcmd, rtype, rurl
+        case ftype, rtUrls, copyright, transName, sign, mark, originCoverType, originSongSimpleData, single, noCopyrightRcmd, bMusic
         case mp3URL = "mp3Url"
-        case hMusic, mMusic, lMusic, bMusic, mvid
+        case rtype, rurl, mvid, hMusic, mMusic, lMusic
     }
 }
 
 // MARK: - Album
 struct Album: Codable {
-    var name: String?
-    var id: Int?
-    var type: TypeEnum?
-    var size: Int?
-    var picID: Double?
-    var blurPicURL: String?
-    var companyID: Int?
-    var pic: Double?
-    var picURL: String?
-    var publishTime: Int?
-    var albumDescription, tags: String?
-    var company: String?
-    var briefDesc: String?
-    var artist: Artist?
-    var songs, alias: [JSONAny]?
-    var status, copyrightID: Int?
-    var commentThreadID: String?
-    var artists: [Artist]?
-    var subType: SubType?
-    var transName: String?
-    var onSale: Bool?
-    var mark, gapless: Int?
-    var picIDStr: String?
-    var transNames: [String]?
+    let name: String?
+    let id: Int?
+    let type: TypeEnum?
+    let size: Int?
+    let picID: Double?
+    let blurPicURL: String?
+    let companyID: Int?
+    let pic: Double?
+    let picURL: String?
+    let publishTime: Int?
+    let albumDescription, tags: String?
+    let company: String?
+    let briefDesc: String?
+    let artist: Artist?
+    let songs, alias: [JSONAny]?
+    let status, copyrightID: Int?
+    let commentThreadID: String?
+    let artists: [Artist]?
+    let subType: SubType?
+    let transName: JSONNull?
+    let onSale: Bool?
+    let mark, gapless: Int?
+    let picIDStr: String?
 
     enum CodingKeys: String, CodingKey {
         case name, id, type, size
@@ -298,7 +312,6 @@ struct Album: Codable {
         case commentThreadID = "commentThreadId"
         case artists, subType, transName, onSale, mark, gapless
         case picIDStr = "picId_str"
-        case transNames
     }
 }
 
@@ -308,18 +321,17 @@ enum SubType: String, Codable {
 }
 
 enum TypeEnum: String, Codable {
-    case ep = "EP"
     case single = "Single"
     case 专辑 = "专辑"
 }
 
 // MARK: - Music
 struct Music: Codable {
-    var name: JSONNull?
-    var id, size: Int?
-    var musicExtension: Extension?
-    var sr, dfsID, bitrate, playTime: Int?
-    var volumeDelta: Int?
+    let name: JSONNull?
+    let id, size: Int?
+    let musicExtension: Extension?
+    let sr, dfsID, bitrate, playTime: Int?
+    let volumeDelta: Int?
 
     enum CodingKeys: String, CodingKey {
         case name, id, size
@@ -337,27 +349,28 @@ enum Extension: String, Codable {
 
 // MARK: - SongPrivilege
 struct SongPrivilege: Codable {
-    var id, fee, payed, realPayed: Int?
-    var st, pl, dl, sp: Int?
-    var cp, subp: Int?
-    var cs: Bool?
-    var maxbr, fl: Int?
-    var pc: JSONNull?
-    var toast: Bool?
-    var flag: Int?
-    var paidBigBang, preSell: Bool?
-    var playMaxbr, downloadMaxbr: Int?
-    var maxBrLevel, playMaxBrLevel, downloadMaxBrLevel: MaxBrLevel?
-    var plLevel: LLevel?
-    var dlLevel: DLLevel?
-    var flLevel: LLevel?
-    var rscl: JSONNull?
-    var freeTrialPrivilege: FreeTrialPrivilege?
-    var chargeInfoList: [ChargeInfoList]?
+    let id, fee, payed, realPayed: Int?
+    let st, pl, dl, sp: Int?
+    let cp, subp: Int?
+    let cs: Bool?
+    let maxbr, fl: Int?
+    let pc: JSONNull?
+    let toast: Bool?
+    let flag: Int?
+    let paidBigBang, preSell: Bool?
+    let playMaxbr, downloadMaxbr: Int?
+    let maxBrLevel, playMaxBrLevel, downloadMaxBrLevel: MaxBrLevel?
+    let plLevel: LLevel?
+    let dlLevel: DLLevel?
+    let flLevel: LLevel?
+    let rscl: JSONNull?
+    let freeTrialPrivilege: FreeTrialPrivilege?
+    let chargeInfoList: [ChargeInfoList]?
 }
 
 enum DLLevel: String, Codable {
     case hires = "hires"
+    case lossless = "lossless"
     case none = "none"
 }
 
@@ -380,16 +393,16 @@ enum ResourceType: String, Codable {
 
 // MARK: - ResourceUIElement
 struct ResourceUIElement: Codable {
-    var mainTitle: Title?
-    var image: Image?
-    var labelTexts: [String]?
-    var rcmdShowType: RcmdShowType?
-    var subTitle: SubTitle?
+    let mainTitle: Title?
+    let image: Image?
+    let labelTexts: [String]?
+    let rcmdShowType: RcmdShowType?
+    let subTitle: SubTitle?
 }
 
 // MARK: - Image
 struct Image: Codable {
-    var imageURL: String?
+    let imageURL: String?
 
     enum CodingKeys: String, CodingKey {
         case imageURL = "imageUrl"
@@ -398,7 +411,7 @@ struct Image: Codable {
 
 // MARK: - Title
 struct Title: Codable {
-    var title: String?
+    let title: String?
 }
 
 enum RcmdShowType: String, Codable {
@@ -407,7 +420,13 @@ enum RcmdShowType: String, Codable {
 
 // MARK: - SubTitle
 struct SubTitle: Codable {
-    var title, titleType: String?
+    let title, titleID, titleType: String?
+
+    enum CodingKeys: String, CodingKey {
+        case title
+        case titleID = "titleId"
+        case titleType
+    }
 }
 
 enum EXTInfoUnion: Codable {
@@ -440,34 +459,35 @@ enum EXTInfoUnion: Codable {
 
 // MARK: - EXTInfoElement
 struct EXTInfoElement: Codable {
-    var liveID: Int?
-    var title: String?
-    var anchorID: Int?
-    var coverID: Double?
-    var cover: String?
-    var liveURL: LiveURL?
-    var playBackURL: JSONNull?
-    var orientationScope, onlineNumber, liveStatus, startTime: Int?
-    var endTime, roomID: Int?
-    var channelID: JSONNull?
-    var liveType, appKeyType, type, startStreamTag: Int?
-    var agoraRoomNo: Int?
-    var bgCoverURL: String?
-    var backgroundAnimateURL: JSONNull?
-    var rtcSupplierType, popularity: Int?
-    var verticalCoverID: Double?
-    var verticalCover: String?
-    var userInfo: UserInfo?
-    var recLiveDTO: RecLiveDTO?
-    var coverTag, privateTag: String?
-    var borderTag: JSONNull?
-    var startStreamTagName: String?
-    var tags: JSONNull?
-    var dynamicCover: DynamicCover?
-    var audioCoverIDS: [String]?
-    var supplementParamToClient: SupplementParamToClient?
-    var cloudMusicMyFollowRecInfo: CloudMusicMyFollowRecInfo?
-    var adSpreadDto: JSONNull?
+    let liveID: Int?
+    let title: String?
+    let anchorID: Int?
+    let coverID: Double?
+    let cover: String?
+    let liveURL: LiveURL?
+    let playBackURL: JSONNull?
+    let orientationScope, onlineNumber, liveStatus, startTime: Int?
+    let endTime, roomID: Int?
+    let channelID: JSONNull?
+    let liveType, appKeyType, type, startStreamTag: Int?
+    let agoraRoomNo: Int?
+    let bgCoverURL: String?
+    let backgroundAnimateURL: JSONNull?
+    let rtcSupplierType, popularity: Int?
+    let verticalCoverID: Double?
+    let verticalCover: String?
+    let userInfo: UserInfo?
+    let recLiveDTO: RecLiveDTO?
+    let coverTag: String?
+    let privateTag: String?
+    let borderTag: JSONNull?
+    let startStreamTagName: String?
+    let tags: JSONNull?
+    let dynamicCover: DynamicCover?
+    let audioCoverIDS: [String]?
+    let supplementParamToClient: SupplementParamToClient?
+    let cloudMusicMyFollowRecInfo: CloudMusicMyFollowRecInfo?
+    let adSpreadDto, payChatRecommendSimpleDto: JSONNull?
 
     enum CodingKeys: String, CodingKey {
         case liveID = "liveId"
@@ -487,7 +507,7 @@ struct EXTInfoElement: Codable {
         case verticalCoverID = "verticalCoverId"
         case verticalCover, userInfo, recLiveDTO, coverTag, privateTag, borderTag, startStreamTagName, tags, dynamicCover
         case audioCoverIDS = "audioCoverIds"
-        case supplementParamToClient, cloudMusicMyFollowRecInfo, adSpreadDto
+        case supplementParamToClient, cloudMusicMyFollowRecInfo, adSpreadDto, payChatRecommendSimpleDto
     }
 }
 
@@ -497,8 +517,8 @@ struct CloudMusicMyFollowRecInfo: Codable {
 
 // MARK: - DynamicCover
 struct DynamicCover: Codable {
-    var priorityLevel, type: Int?
-    var playURL: JSONNull?
+    let priorityLevel, type: Int?
+    let playURL: JSONNull?
 
     enum CodingKeys: String, CodingKey {
         case priorityLevel, type
@@ -508,9 +528,9 @@ struct DynamicCover: Codable {
 
 // MARK: - LiveURL
 struct LiveURL: Codable {
-    var httpPullURL: String?
-    var hlsPullURL: String?
-    var rtmpPullURL: String?
+    let httpPullURL: String?
+    let hlsPullURL: String?
+    let rtmpPullURL: String?
 
     enum CodingKeys: String, CodingKey {
         case httpPullURL = "httpPullUrl"
@@ -521,16 +541,18 @@ struct LiveURL: Codable {
 
 // MARK: - RecLiveDTO
 struct RecLiveDTO: Codable {
-    var skipURL, typeDesc: String?
-    var cardType: Int?
-    var alg, anchorID: String?
-    var liveRoomNo, songID, accompanimentID: Int?
-    var supplemetParam: SupplemetParam?
-    var ops: String?
-    var recCoverID: Double?
-    var recCover: String?
-    var coverTag: String?
-    var segID: Int?
+    let skipURL, typeDesc: String?
+    let cardType: Int?
+    let alg: String?
+    let anchorID: String?
+    let liveRoomNo: Int?
+    let songID, accompanimentID: Int?
+    let supplemetParam: SupplemetParam?
+    let ops: String?
+    let recCoverID: Double?
+    let recCover: String?
+    let coverTag: String?
+    let segID: Int?
 
     enum CodingKeys: String, CodingKey {
         case skipURL = "skipUrl"
@@ -548,7 +570,7 @@ struct RecLiveDTO: Codable {
 
 // MARK: - SupplemetParam
 struct SupplemetParam: Codable {
-    var hpModuletitle, coverID, liveOnlineNumber: String?
+    let hpModuletitle, coverID, liveOnlineNumber: String?
 
     enum CodingKeys: String, CodingKey {
         case hpModuletitle = "hp_moduletitle"
@@ -558,18 +580,18 @@ struct SupplemetParam: Codable {
 
 // MARK: - SupplementParamToClient
 struct SupplementParamToClient: Codable {
-    var ops: String?
+    let ops: String?
 }
 
 // MARK: - UserInfo
 struct UserInfo: Codable {
-    var userID: Int?
-    var nickname: String?
-    var avatarURL: String?
-    var authStatus, userType: Int?
-    var authName: JSONNull?
-    var liveRoomNo, vipType, gender: Int?
-    var artistName: JSONNull?
+    let userID: Int?
+    let nickname: String?
+    let avatarURL: String?
+    let authStatus, userType: Int?
+    let authName: JSONNull?
+    let liveRoomNo, vipType, gender: Int?
+    let artistName: JSONNull?
 
     enum CodingKeys: String, CodingKey {
         case userID = "userId"
@@ -581,32 +603,32 @@ struct UserInfo: Codable {
 
 // MARK: - PurpleEXTInfo
 struct PurpleEXTInfo: Codable {
-    var banners: [Banner]?
+    let banners: [Banner]?
 }
 
 // MARK: - Banner
 struct Banner: Codable {
-    var adLocation, monitorImpress: JSONNull?
-    var bannerID: String?
-    var extMonitor, pid: JSONNull?
-    var pic: String?
-    var program, video, adurlV2, adDispatchJSON: JSONNull?
-    var dynamicVideoData, monitorType, adid: JSONNull?
-    var titleColor, requestID: String?
-    var exclusive: Bool?
-    var scm: String?
-    var event: JSONNull?
-    var alg, sCtrp: String?
-    var song: BannerSong?
-    var targetID: Int?
-    var showAdTag: Bool?
-    var adSource, showContext: JSONNull?
-    var targetType: Int?
-    var typeTitle: String?
-    var url: String?
-    var encodeID: String?
-    var extMonitorInfo, monitorClick, monitorImpressList, logContext: JSONNull?
-    var monitorBlackList, monitorClickList: JSONNull?
+    let adLocation, monitorImpress: JSONNull?
+    let bannerID: String?
+    let extMonitor, pid: JSONNull?
+    let pic: String?
+    let program, video, adurlV2, adDispatchJSON: JSONNull?
+    let dynamicVideoData, monitorType, adid: JSONNull?
+    let titleColor, requestID: String?
+    let exclusive: Bool?
+    let bannerBizType, scm: String?
+    let event: JSONNull?
+    let alg, sCtrp: String?
+    let song: BannerSong?
+    let targetID: Int?
+    let showAdTag: Bool?
+    let adSource, showContext: JSONNull?
+    let targetType: Int?
+    let typeTitle: String?
+    let url: String?
+    let encodeID: String?
+    let extMonitorInfo, monitorClick, monitorImpressList, logContext: JSONNull?
+    let monitorBlackList, monitorClickList: JSONNull?
 
     enum CodingKeys: String, CodingKey {
         case adLocation, monitorImpress
@@ -615,7 +637,7 @@ struct Banner: Codable {
         case adDispatchJSON = "adDispatchJson"
         case dynamicVideoData, monitorType, adid, titleColor
         case requestID = "requestId"
-        case exclusive, scm, event, alg
+        case exclusive, bannerBizType, scm, event, alg
         case sCtrp = "s_ctrp"
         case song
         case targetID = "targetId"
@@ -627,38 +649,38 @@ struct Banner: Codable {
 
 // MARK: - BannerSong
 struct BannerSong: Codable {
-    var name: String?
-    var id, pst, t: Int?
-    var ar: [Ar]?
-    var alia: [JSONAny]?
-    var pop, st: Int?
-    var rt: String?
-    var fee, v: Int?
-    var crbt: JSONNull?
-    var cf: String?
-    var al: Al?
-    var dt: Int?
-    var h, m, l: H?
-    var sq, hr: H?
-    var a: JSONNull?
-    var cd: String?
-    var no: Int?
-    var rtURL: JSONNull?
-    var ftype: Int?
-    var rtUrls: [JSONAny]?
-    var djID, copyright, sID, mark: Int?
-    var originCoverType: Int?
-    var originSongSimpleData, tagPicList: JSONNull?
-    var resourceState: Bool?
-    var version: Int?
-    var songJumpInfo, entertainmentTags: JSONNull?
-    var single: Int?
-    var noCopyrightRcmd: JSONNull?
-    var rtype: Int?
-    var rurl: JSONNull?
-    var mst, cp, mv, publishTime: Int?
-    var videoInfo: VideoInfo?
-    var alg: String?
+    let name: String?
+    let id, pst, t: Int?
+    let ar: [Ar]?
+    let alia: [String]?
+    let pop, st: Int?
+    let rt: String?
+    let fee, v: Int?
+    let crbt: JSONNull?
+    let cf: String?
+    let al: Al?
+    let dt: Int?
+    let h, m, l, sq: L?
+    let hr: L?
+    let a: JSONNull?
+    let cd: String?
+    let no: Int?
+    let rtURL: JSONNull?
+    let ftype: Int?
+    let rtUrls: [JSONAny]?
+    let djID, copyright, sID, mark: Int?
+    let originCoverType: Int?
+    let originSongSimpleData, tagPicList: JSONNull?
+    let resourceState: Bool?
+    let version: Int?
+    let songJumpInfo, entertainmentTags: JSONNull?
+    let single: Int?
+    let noCopyrightRcmd: JSONNull?
+    let rtype: Int?
+    let rurl: JSONNull?
+    let mst, cp, mv, publishTime: Int?
+    let videoInfo: VideoInfo?
+    let alg: String?
 
     enum CodingKeys: String, CodingKey {
         case name, id, pst, t, ar, alia, pop, st, rt, fee, v, crbt, cf, al, dt, h, m, l, sq, hr, a, cd, no
@@ -673,17 +695,17 @@ struct BannerSong: Codable {
 
 // MARK: - BlockUIElement
 struct BlockUIElement: Codable {
-    var subTitle: Title?
-    var button: Button?
-    var rcmdShowType: RcmdShowType?
+    let subTitle: Title?
+    let button: Button?
+    let rcmdShowType: RcmdShowType?
 }
 
 // MARK: - Button
 struct Button: Codable {
-    var action: String?
-    var actionType: ActionType?
-    var text: String?
-    var iconURL, biData: JSONNull?
+    let action: String?
+    let actionType: ActionType?
+    let text: String?
+    let iconURL, biData: JSONNull?
 
     enum CodingKeys: String, CodingKey {
         case action, actionType, text
@@ -694,21 +716,21 @@ struct Button: Codable {
 
 // MARK: - GuideToast
 struct GuideToast: Codable {
-    var hasGuideToast: Bool?
-    var toastList: [JSONAny]?
+    let hasGuideToast: Bool?
+    let toastList: [JSONAny]?
 }
 
 // MARK: - PageConfig
 struct PageConfig: Codable {
-    var refreshToast, nodataToast: String?
-    var refreshInterval: Int?
-    var title: JSONNull?
-    var fullscreen: Bool?
-    var abtest, songLabelMarkPriority: [String]?
-    var songLabelMarkLimit: Int?
-    var homepageMode: String?
-    var showModeEntry: Bool?
-    var orderInfo: String?
+    let refreshToast, nodataToast: String?
+    let refreshInterval: Int?
+    let title: JSONNull?
+    let fullscreen: Bool?
+    let abtest, songLabelMarkPriority: [String]?
+    let songLabelMarkLimit: Int?
+    let homepageMode: String?
+    let showModeEntry: Bool?
+    let orderInfo: String?
 }
 
 // MARK: - Encode/decode helpers
@@ -952,3 +974,4 @@ class JSONAny: Codable {
         }
     }
 }
+

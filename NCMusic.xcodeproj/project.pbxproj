@@ -64,6 +64,8 @@
 		AFCFE31828D9ADD100199F84 /* NCSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFE31728D9ADD100199F84 /* NCSettingViewController.swift */; };
 		AFCFE31B28D9AFA300199F84 /* NCSettingSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFE31A28D9AFA300199F84 /* NCSettingSwitchCell.swift */; };
 		AFCFE31E28D9BE2C00199F84 /* NCTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFE31D28D9BE2C00199F84 /* NCTabbarController.swift */; };
+		AFDA7A97293A0E660000D20A /* NCRcmdLiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA7A96293A0E660000D20A /* NCRcmdLiveCell.swift */; };
+		AFDCBA4D2930A8B9008C6C58 /* NCPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDCBA4C2930A8B9008C6C58 /* NCPlayerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +160,8 @@
 		AFCFE31728D9ADD100199F84 /* NCSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCSettingViewController.swift; sourceTree = "<group>"; };
 		AFCFE31A28D9AFA300199F84 /* NCSettingSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCSettingSwitchCell.swift; sourceTree = "<group>"; };
 		AFCFE31D28D9BE2C00199F84 /* NCTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCTabbarController.swift; sourceTree = "<group>"; };
+		AFDA7A96293A0E660000D20A /* NCRcmdLiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCRcmdLiveCell.swift; sourceTree = "<group>"; };
+		AFDCBA4C2930A8B9008C6C58 /* NCPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCPlayerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +221,7 @@
 				AF138E9128AB9EF300DFBE79 /* AppDelegate.swift */,
 				AF138E9328AB9EF300DFBE79 /* SceneDelegate.swift */,
 				AF138E9528AB9EF300DFBE79 /* ViewController.swift */,
+				AFDCBA472930A7D1008C6C58 /* Frameworks */,
 				AFCFE30F28D9A1C000199F84 /* Theme */,
 				AFC75B7528C8A271006932EC /* Utils */,
 				AFC75B6E28C899E0006932EC /* UI */,
@@ -279,6 +284,7 @@
 			children = (
 				AFAB5B71291BB8F600096EBF /* NCBannerCell.swift */,
 				AFAB5B73291CA5CA00096EBF /* NCSelectedAlbumCell.swift */,
+				AFDA7A96293A0E660000D20A /* NCRcmdLiveCell.swift */,
 				AFAB5B77291E319700096EBF /* NCRecommendSongsListCell.swift */,
 				AFC104532923371800B1204B /* NCHomepageBtnCell.swift */,
 				AFAB5B75291E25F900096EBF /* NCSectionHeaderView.swift */,
@@ -361,6 +367,7 @@
 		AFC75B6E28C899E0006932EC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				AFDCBA45293073E5008C6C58 /* Player */,
 				AFB08C4328F81BC8008A9B61 /* Components */,
 				AF24DEA628E69D20008759F9 /* Homepage */,
 				AFCFE31C28D9BE1300199F84 /* Navigation */,
@@ -442,6 +449,21 @@
 				AF4F5F0D28DABFA00062CE3A /* NCNavigationController.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		AFDCBA45293073E5008C6C58 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				AFDCBA4C2930A8B9008C6C58 /* NCPlayerController.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		AFDCBA472930A7D1008C6C58 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -597,6 +619,7 @@
 				AFC75B4C28C84C17006932EC /* NCBaseViewController.swift in Sources */,
 				AFCFE31B28D9AFA300199F84 /* NCSettingSwitchCell.swift in Sources */,
 				AFC75B8728C8BF1D006932EC /* NCRecommendSongsModel.swift in Sources */,
+				AFDCBA4D2930A8B9008C6C58 /* NCPlayerController.swift in Sources */,
 				AFAB5B652913DFF700096EBF /* CarouselCell.swift in Sources */,
 				AFC75B6328C8855B006932EC /* NCNetReqManager.swift in Sources */,
 				AF4F5F1128DC075E0062CE3A /* NCHomepageModel.swift in Sources */,
@@ -609,6 +632,7 @@
 				AF138E9628AB9EF300DFBE79 /* ViewController.swift in Sources */,
 				AFC75B6128C88458006932EC /* NCUrlConstsnt.swift in Sources */,
 				AFC1045229223D7300B1204B /* NCStyleLayout.swift in Sources */,
+				AFDA7A97293A0E660000D20A /* NCRcmdLiveCell.swift in Sources */,
 				AF138E9228AB9EF300DFBE79 /* AppDelegate.swift in Sources */,
 				AFAB5B78291E319700096EBF /* NCRecommendSongsListCell.swift in Sources */,
 				AFC75B4E28C84C96006932EC /* NCBaseTableViewController.swift in Sources */,

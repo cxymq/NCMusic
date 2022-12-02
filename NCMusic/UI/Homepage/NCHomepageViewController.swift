@@ -11,8 +11,13 @@ import UIKit
 class NCHomepageViewController: NCBaseTableViewController {
     private var homepageBanners = [CarouselData]()
     private var selectedAlbums = [Creative]()
+    private var isSelected = false
     private var recommendSongs = [Creative]()
+    private var isRecommend = false
     private var radarAlbums = [Creative]()
+    private var isRadar = false
+    private var recommendLives = [EXTInfoElement]()
+    private var isLives = false
 
     var carouselView = CarouselView()
     
@@ -28,6 +33,7 @@ class NCHomepageViewController: NCBaseTableViewController {
         tableView.register(NCHomepageBtnCell.self, forCellReuseIdentifier: NCHomepageBtnCell.standardReuseIdentifier)
         tableView.register(NCSelectedAlbumCell.self, forCellReuseIdentifier: NCSelectedAlbumCell.standardReuseIdentifier)
         tableView.register(NCRecommendSongsListCell.self, forCellReuseIdentifier: NCRecommendSongsListCell.standardReuseIdentifier)
+        tableView.register(NCRcmdLiveCell.self, forCellReuseIdentifier: NCRcmdLiveCell.standardReuseIdentifier)
 
         tableView.register(NCSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: NCSectionHeaderView.standardReuseIdentifier)
         loadData()
@@ -53,19 +59,37 @@ class NCHomepageViewController: NCBaseTableViewController {
                     self.dataSource = resultDic.blocks! as NSArray
                     // banners
                     let block:Block = self.dataSource.firstObject! as! Block
-                    let homepage_banners = block.extInfo?.banners
-                    homepage_banners?.forEach({ banner in
-                        self.homepageBanners.append(.init(imageUrl: banner.pic ?? "", url: banner.url ?? ""))
-                    })
-                    
-                    // 精选音单
+                    let exInfo = block.extInfo
+                    switch (exInfo) {
+                    case .none: break
+                    case .some(let .extInfoElementArray(extInfos)):
+                        self.recommendLives = extInfos
+                        if self.recommendLives.count > 0 {
+                            self.isLives = true
+                        }
+                    case .some(let .purpleEXTInfo(purpleInfo)):
+                        let homepage_banners = purpleInfo.banners
+                        homepage_banners?.forEach({ banner in
+                            self.homepageBanners.append(.init(imageUrl: banner.pic ?? "", url: banner.url ?? ""))
+                        })
+                    }
+                    // 推荐歌单
                     self.selectedAlbums = (self.dataSource[1] as! Block).creatives ?? []
-                    
-                    // 推荐
+                    if self.selectedAlbums.count > 0 {
+                        self.isSelected = true
+                    }
+
+                    // 风格推荐
                     self.recommendSongs = (self.dataSource[2] as! Block).creatives ?? []
-                    
+                    if self.recommendSongs.count > 0 {
+                        self.isRecommend = true
+                    }
+
                     // 雷达歌单
                     self.radarAlbums = (self.dataSource[3] as! Block).creatives ?? []
+                    if self.radarAlbums.count > 0 {
+                        self.isRadar = true
+                    }
 
                     self.tableView.reloadData()
 
@@ -81,13 +105,21 @@ class NCHomepageViewController: NCBaseTableViewController {
 
 extension NCHomepageViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 2 + (isSelected ? 1 : 0) + (isRecommend ? 1 : 0) + (isRadar ? 1 : 0) + (isLives ? 1 : 0)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0, 1, 2, 3, 4:
+        case 0, 1:
             return 1
+        case 2:
+            return isSelected ? 1 : 0
+        case 3:
+            return isRecommend ? 1 : 0
+        case 4:
+            return isRadar ? 1 : 0
+        case 5:
+            return isLives ? 1 : 0
         default:
             return 0
         }
@@ -99,10 +131,14 @@ extension NCHomepageViewController: UITableViewDataSource {
             return 160.0
         case 1:
             return 60.0
-        case 2, 4:
-            return 140.0
+        case 2:
+            return isSelected ? 140.0 : 0
         case 3:
-            return 200.0
+            return isRecommend ? 200.0 : 0
+        case 4:
+            return isRadar ? 140.0 : 0
+        case 5:
+            return isLives ? 140.0 : 0
         default:
             return 0
         }
@@ -113,9 +149,30 @@ extension NCHomepageViewController: UITableViewDataSource {
         switch section {
         case 0, 1:
             return nil
-        case 2, 4: break
+        case 2:
+            if isSelected {
+                break
+            } else {
+                return nil
+            }
         case 3:
-            isMore = false
+            if isRecommend {
+                isMore = false
+            } else {
+                return nil
+            }
+        case 4:
+            if isRadar {
+                break
+            } else {
+                return nil
+            }
+        case 5:
+            if isLives {
+                break
+            } else {
+                return nil
+            }
         default:
             return nil
         }
@@ -132,8 +189,14 @@ extension NCHomepageViewController: UITableViewDataSource {
         switch section {
         case 0, 1:
             return 0.1
-        case 2, 3, 4:
-            return 45
+        case 2:
+            return isSelected ? 45 : 0.1
+        case 3:
+            return isRecommend ? 45 : 0.1
+        case 4:
+            return isRadar ? 45 : 0.1
+        case 5:
+            return isLives ? 45 : 0.1
         default:
             return 0.1
         }
@@ -168,6 +231,10 @@ extension NCHomepageViewController: UITableViewDataSource {
         case 4:
             let cell: NCSelectedAlbumCell = tableView.dequeueReusableCell(withIdentifier: NCSelectedAlbumCell.standardReuseIdentifier, for: indexPath) as! NCSelectedAlbumCell
             cell.albums = radarAlbums
+            return cell
+        case 5:
+            let cell: NCRcmdLiveCell = tableView.dequeueReusableCell(withIdentifier: NCRcmdLiveCell.standardReuseIdentifier, for: indexPath) as! NCRcmdLiveCell
+            cell.lives = recommendLives
             return cell
         default:
             let cell: NCBannerCell = tableView.dequeueReusableCell(withIdentifier: NCBannerCell.standardReuseIdentifier, for: indexPath) as! NCBannerCell

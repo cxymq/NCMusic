@@ -71,5 +71,7 @@ extension NCRecommendSongsViewController: UITableViewDataSource {
 }
 
 extension NCRecommendSongsViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    }
 }
