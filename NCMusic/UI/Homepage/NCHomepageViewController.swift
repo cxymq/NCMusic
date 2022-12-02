@@ -58,15 +58,11 @@ class NCHomepageViewController: NCBaseTableViewController {
 
                     self.dataSource = resultDic.blocks! as NSArray
                     // banners
-                    let block:Block = self.dataSource.firstObject! as! Block
+                    let block: Block = self.dataSource.firstObject! as! Block
                     let exInfo = block.extInfo
                     switch (exInfo) {
                     case .none: break
-                    case .some(let .extInfoElementArray(extInfos)):
-                        self.recommendLives = extInfos
-                        if self.recommendLives.count > 0 {
-                            self.isLives = true
-                        }
+                    case .some(.extInfoElementArray(_)):break
                     case .some(let .purpleEXTInfo(purpleInfo)):
                         let homepage_banners = purpleInfo.banners
                         homepage_banners?.forEach({ banner in
@@ -89,6 +85,18 @@ class NCHomepageViewController: NCBaseTableViewController {
                     self.radarAlbums = (self.dataSource[3] as! Block).creatives ?? []
                     if self.radarAlbums.count > 0 {
                         self.isRadar = true
+                    }
+                    // lives
+                    let block2: Block = self.dataSource[4] as! Block
+                    let exInfo2 = block2.extInfo
+                    switch (exInfo2) {
+                    case .none: break
+                    case .some(let .extInfoElementArray(extInfos)):
+                        self.recommendLives = extInfos
+                        if self.recommendLives.count > 0 {
+                            self.isLives = true
+                        }
+                    case .some(.purpleEXTInfo(_)): break
                     }
 
                     self.tableView.reloadData()
