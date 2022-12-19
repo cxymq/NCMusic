@@ -65,6 +65,8 @@
 		AFCFE31B28D9AFA300199F84 /* NCSettingSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFE31A28D9AFA300199F84 /* NCSettingSwitchCell.swift */; };
 		AFCFE31E28D9BE2C00199F84 /* NCTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFE31D28D9BE2C00199F84 /* NCTabbarController.swift */; };
 		AFDA7A97293A0E660000D20A /* NCRcmdLiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA7A96293A0E660000D20A /* NCRcmdLiveCell.swift */; };
+		AFDAA3C529482892000A61CC /* 039655.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AFDAA3C429482892000A61CC /* 039655.mp3 */; };
+		AFDAA42129482C01000A61CC /* NCAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDAA42029482C01000A61CC /* NCAudioPlayer.swift */; };
 		AFDCBA4D2930A8B9008C6C58 /* NCPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDCBA4C2930A8B9008C6C58 /* NCPlayerController.swift */; };
 /* End PBXBuildFile section */
 
@@ -161,6 +163,8 @@
 		AFCFE31A28D9AFA300199F84 /* NCSettingSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCSettingSwitchCell.swift; sourceTree = "<group>"; };
 		AFCFE31D28D9BE2C00199F84 /* NCTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCTabbarController.swift; sourceTree = "<group>"; };
 		AFDA7A96293A0E660000D20A /* NCRcmdLiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCRcmdLiveCell.swift; sourceTree = "<group>"; };
+		AFDAA3C429482892000A61CC /* 039655.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 039655.mp3; sourceTree = "<group>"; };
+		AFDAA42029482C01000A61CC /* NCAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCAudioPlayer.swift; sourceTree = "<group>"; };
 		AFDCBA4C2930A8B9008C6C58 /* NCPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCPlayerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -356,6 +360,7 @@
 		AFC75B6928C89617006932EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AFDAA3C429482892000A61CC /* 039655.mp3 */,
 				AFC75B6A28C89695006932EC /* NCJsonData.swift */,
 				AFC75B6C28C8990E006932EC /* recommendRes.json */,
 				AFC75B8A28C8BF3E006932EC /* recommendSongs.json */,
@@ -451,9 +456,18 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		AFDAA41F29482BEA000A61CC /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				AFDAA42029482C01000A61CC /* NCAudioPlayer.swift */,
+			);
+			path = AudioPlayer;
+			sourceTree = "<group>";
+		};
 		AFDCBA45293073E5008C6C58 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				AFDAA41F29482BEA000A61CC /* AudioPlayer */,
 				AFDCBA4C2930A8B9008C6C58 /* NCPlayerController.swift */,
 			);
 			path = Player;
@@ -572,6 +586,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFDAA3C529482892000A61CC /* 039655.mp3 in Resources */,
 				AFB4B79928D881BC0054FA77 /* homepageBlockPage.json in Resources */,
 				AFC75B6D28C8990E006932EC /* recommendRes.json in Resources */,
 				AF138E9E28AB9EF400DFBE79 /* LaunchScreen.storyboard in Resources */,
@@ -611,6 +626,7 @@
 				AFAB5B72291BB8F600096EBF /* NCBannerCell.swift in Sources */,
 				AFC75B8128C8BA82006932EC /* NCRecommendResModel.swift in Sources */,
 				AFC75B7328C89B3B006932EC /* NCBaseCollectionViewController.swift in Sources */,
+				AFDAA42129482C01000A61CC /* NCAudioPlayer.swift in Sources */,
 				AFC75B6528C88CD2006932EC /* NCNetService.swift in Sources */,
 				AFC75B8528C8BF03006932EC /* NCRecommendSongsViewController.swift in Sources */,
 				AFC75B8D28D0857F006932EC /* NCStringExtension.swift in Sources */,

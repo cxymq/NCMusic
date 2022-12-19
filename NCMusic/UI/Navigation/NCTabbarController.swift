@@ -40,7 +40,11 @@ class NCTabbarController: UITabBarController {
                 self.tabBar.scrollEdgeAppearance = app
             }
         }
-        
+
+        if #available(iOS 15.0, *) {
+            UITableView.appearance().sectionHeaderTopPadding = 0
+        }
+
         let homepageVC = NCNavigationController(rootViewController: NCHomepageViewController(style: .grouped))
         let homepageImg = UIImage(named: "default_tabbar")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         homepageVC.tabBarItem.image = homepageImg;

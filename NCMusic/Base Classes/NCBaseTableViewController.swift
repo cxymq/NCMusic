@@ -18,6 +18,7 @@ class NCBaseTableViewController: NCBaseViewController {
         tableViewStyle = style
         tableView = UITableView.init(frame: .zero, style: tableViewStyle)
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.theme_backgroundColor = globalBgColor
         super.init(nibName: nil, bundle: nil)

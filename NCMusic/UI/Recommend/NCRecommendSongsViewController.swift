@@ -72,6 +72,9 @@ extension NCRecommendSongsViewController: UITableViewDataSource {
 
 extension NCRecommendSongsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        let vc = NCPlayerController()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+        //NCAudioPlayer.shared.playSound()
     }
 }

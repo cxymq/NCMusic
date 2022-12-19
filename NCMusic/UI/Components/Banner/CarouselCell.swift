@@ -44,7 +44,7 @@ private extension CarouselCell {
         }
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 24
+        imageView.layer.cornerRadius = 12
     }
 }
 
