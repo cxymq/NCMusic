@@ -35,4 +35,17 @@ extension String {
         }
         return playCount
     }
+
+    static func durationToString(duration: TimeInterval) -> String {
+        var playTime = "00:00"
+        if (duration <= 0) {
+            return playTime
+        }
+        if (duration < 60) {
+            playTime = String(format: "00:%02.f", duration)
+        } else {
+            playTime = String(format: "%02.f:%02.f", duration / 60, duration.truncatingRemainder(dividingBy: 60))
+        }
+        return playTime
+    }
 }

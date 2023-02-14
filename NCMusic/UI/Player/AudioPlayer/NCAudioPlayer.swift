@@ -10,6 +10,9 @@ import Foundation
 
 class NCAudioPlayer: NSObject {
     var player = AVAudioPlayer()
+    var isPlaying: Bool{
+        return player.isPlaying
+    }
     static let shared = NCAudioPlayer()
     
     // Make sure the class has only one instance
@@ -30,6 +33,9 @@ class NCAudioPlayer: NSObject {
     }
 
     func playSound() {
+        if isPlaying {
+            player.stop()
+        }
         // Load a local sound file
         let audioPath = Bundle.main.path(forResource: "039655", ofType: "mp3")
         let audioUrl = URL(string: audioPath!)
@@ -57,6 +63,22 @@ class NCAudioPlayer: NSObject {
             // Handle error
             print("play error")
         }
+    }
+    
+    func play() {
+        player.play()
+    }
+    
+    func playAtTime(time: TimeInterval) {
+        player.play(atTime: time)
+    }
+    
+    func pause() {
+        player.pause()
+    }
+    
+    func stop() {
+        player.stop()
     }
 }
 extension NCAudioPlayer: AVAudioPlayerDelegate {
