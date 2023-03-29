@@ -1,0 +1,6 @@
+framework module Pods_NCMusic {
+  umbrella header "Pods-NCMusic-umbrella.h"
+
+  export *
+  module * { export * }
+}
