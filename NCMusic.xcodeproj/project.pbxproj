@@ -39,17 +39,9 @@
 		AFC75B4E28C84C96006932EC /* NCBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B4D28C84C96006932EC /* NCBaseTableViewController.swift */; };
 		AFC75B5028C84CDB006932EC /* NCBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B4F28C84CDB006932EC /* NCBaseTableViewCell.swift */; };
 		AFC75B5328C850EA006932EC /* ReuseIdentifierProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B5228C850EA006932EC /* ReuseIdentifierProviding.swift */; };
-		AFC75B5628C88132006932EC /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC75B5528C88132006932EC /* SnapKit.xcframework */; };
-		AFC75B5728C88132006932EC /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AFC75B5528C88132006932EC /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AFC75B5A28C88336006932EC /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC75B5928C88336006932EC /* Alamofire.xcframework */; };
-		AFC75B5B28C88336006932EC /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AFC75B5928C88336006932EC /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AFC75B5D28C88341006932EC /* AlamofireImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC75B5C28C88341006932EC /* AlamofireImage.xcframework */; };
-		AFC75B5E28C88341006932EC /* AlamofireImage.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AFC75B5C28C88341006932EC /* AlamofireImage.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AFC75B6128C88458006932EC /* NCUrlConstsnt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B6028C88458006932EC /* NCUrlConstsnt.swift */; };
 		AFC75B6328C8855B006932EC /* NCNetReqManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B6228C8855B006932EC /* NCNetReqManager.swift */; };
 		AFC75B6528C88CD2006932EC /* NCNetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B6428C88CD2006932EC /* NCNetService.swift */; };
-		AFC75B6728C88DB5006932EC /* Moya.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC75B6628C88DB5006932EC /* Moya.xcframework */; };
-		AFC75B6828C88DB5006932EC /* Moya.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AFC75B6628C88DB5006932EC /* Moya.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AFC75B6B28C89695006932EC /* NCJsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B6A28C89695006932EC /* NCJsonData.swift */; };
 		AFC75B6D28C8990E006932EC /* recommendRes.json in Resources */ = {isa = PBXBuildFile; fileRef = AFC75B6C28C8990E006932EC /* recommendRes.json */; };
 		AFC75B7128C89A4B006932EC /* NCRecommendResViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B7028C89A4B006932EC /* NCRecommendResViewController.swift */; };
@@ -61,8 +53,6 @@
 		AFC75B8928C8BF2B006932EC /* NCRecommendSongsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B8828C8BF2B006932EC /* NCRecommendSongsCell.swift */; };
 		AFC75B8B28C8BF3E006932EC /* recommendSongs.json in Resources */ = {isa = PBXBuildFile; fileRef = AFC75B8A28C8BF3E006932EC /* recommendSongs.json */; };
 		AFC75B8D28D0857F006932EC /* NCStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC75B8C28D0857F006932EC /* NCStringExtension.swift */; };
-		AFCFE30D28D9A1B100199F84 /* SwiftTheme.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFE30C28D9A1B100199F84 /* SwiftTheme.xcframework */; };
-		AFCFE30E28D9A1B100199F84 /* SwiftTheme.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFE30C28D9A1B100199F84 /* SwiftTheme.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AFCFE31128D9A1DB00199F84 /* NCThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFE31028D9A1DB00199F84 /* NCThemeManager.swift */; };
 		AFCFE31328D9A2CD00199F84 /* day.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFCFE31228D9A2CD00199F84 /* day.plist */; };
 		AFCFE31528D9A2D700199F84 /* night.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFCFE31428D9A2D700199F84 /* night.plist */; };
@@ -100,11 +90,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AFC75B5E28C88341006932EC /* AlamofireImage.xcframework in Embed Frameworks */,
-				AFCFE30E28D9A1B100199F84 /* SwiftTheme.xcframework in Embed Frameworks */,
-				AFC75B6828C88DB5006932EC /* Moya.xcframework in Embed Frameworks */,
-				AFC75B5B28C88336006932EC /* Alamofire.xcframework in Embed Frameworks */,
-				AFC75B5728C88132006932EC /* SnapKit.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,11 +176,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFC75B5D28C88341006932EC /* AlamofireImage.xcframework in Frameworks */,
-				AFCFE30D28D9A1B100199F84 /* SwiftTheme.xcframework in Frameworks */,
-				AFC75B6728C88DB5006932EC /* Moya.xcframework in Frameworks */,
-				AFC75B5A28C88336006932EC /* Alamofire.xcframework in Frameworks */,
-				AFC75B5628C88132006932EC /* SnapKit.xcframework in Frameworks */,
 				8A27EADA7DD9B8D13825013C /* Pods_NCMusic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,7 +506,6 @@
 				44D53EEFBD7F5E898ADD1257 /* Pods-NCMusicTests.debug.xcconfig */,
 				AAFEDF94ED776541B851D6B2 /* Pods-NCMusicTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
