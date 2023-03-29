@@ -48,4 +48,11 @@ extension String {
         }
         return playTime
     }
+
+    func nilString() -> String {
+        if self.isEmpty {
+            return "https://m.missevan.com/drama"
+        }
+        return self
+    }
 }

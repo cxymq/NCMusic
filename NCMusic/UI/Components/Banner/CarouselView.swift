@@ -43,6 +43,7 @@ class CarouselView: UIView {
             pageControl.currentPage = currentPage
         }
     }
+    weak var delegate: CarouseSelectedDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -98,6 +99,13 @@ extension CarouselView: UICollectionViewDataSource {
 }
 
 extension CarouselView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let url = carouselData[indexPath.row].url
+        delegate?.carouseSelected(index: indexPath.row, urlStr: url)
+    }
+}
+
+extension CarouselView: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         currentPage = getCurrentPage()
     }
@@ -132,4 +140,8 @@ private extension CarouselView {
         
         return currentPage
     }
+}
+
+protocol CarouseSelectedDelegate: AnyObject {
+    func carouseSelected(index: Int, urlStr: String)
 }

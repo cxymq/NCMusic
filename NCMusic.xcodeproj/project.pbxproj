@@ -20,6 +20,7 @@
 		AF138EB528AB9EF500DFBE79 /* NCMusicUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF138EB428AB9EF500DFBE79 /* NCMusicUITestsLaunchTests.swift */; };
 		AF24DEA528E69B49008759F9 /* NCBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24DEA428E69B49008759F9 /* NCBaseModel.swift */; };
 		AF24DEA928E69D7E008759F9 /* NCHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24DEA828E69D7E008759F9 /* NCHomepageViewController.swift */; };
+		AF48E40D29D41FAE0082B911 /* NCWebviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48E40C29D41FAE0082B911 /* NCWebviewController.swift */; };
 		AF4F5F0E28DABFA00062CE3A /* NCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F5F0D28DABFA00062CE3A /* NCNavigationController.swift */; };
 		AF4F5F1128DC075E0062CE3A /* NCHomepageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F5F1028DC075E0062CE3A /* NCHomepageModel.swift */; };
 		AF86A84029505E43001B8C2E /* NCImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF86A83F29505E43001B8C2E /* NCImageExtension.swift */; };
@@ -121,6 +122,7 @@
 		AF138EB428AB9EF500DFBE79 /* NCMusicUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMusicUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AF24DEA428E69B49008759F9 /* NCBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCBaseModel.swift; sourceTree = "<group>"; };
 		AF24DEA828E69D7E008759F9 /* NCHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCHomepageViewController.swift; sourceTree = "<group>"; };
+		AF48E40C29D41FAE0082B911 /* NCWebviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCWebviewController.swift; sourceTree = "<group>"; };
 		AF4F5F0D28DABFA00062CE3A /* NCNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCNavigationController.swift; sourceTree = "<group>"; };
 		AF4F5F1028DC075E0062CE3A /* NCHomepageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCHomepageModel.swift; sourceTree = "<group>"; };
 		AF86A83F29505E43001B8C2E /* NCImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCImageExtension.swift; sourceTree = "<group>"; };
@@ -278,6 +280,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		AF48E40B29D41F680082B911 /* Webview */ = {
+			isa = PBXGroup;
+			children = (
+				AF48E40C29D41FAE0082B911 /* NCWebviewController.swift */,
+			);
+			path = Webview;
+			sourceTree = "<group>";
+		};
 		AF4F5F0F28DAFC0A0062CE3A /* SideBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +312,7 @@
 		AFB08C4328F81BC8008A9B61 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AFD9C56429D3E74900027903 /* ControlView */,
 				AFB08C4428F81BF5008A9B61 /* Banner */,
 				AF4F5F0F28DAFC0A0062CE3A /* SideBar */,
 			);
@@ -386,6 +397,7 @@
 		AFC75B6E28C899E0006932EC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				AF48E40B29D41F680082B911 /* Webview */,
 				AFDCBA45293073E5008C6C58 /* Player */,
 				AFB08C4328F81BC8008A9B61 /* Components */,
 				AF24DEA628E69D20008759F9 /* Homepage */,
@@ -469,6 +481,13 @@
 				AF4F5F0D28DABFA00062CE3A /* NCNavigationController.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		AFD9C56429D3E74900027903 /* ControlView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ControlView;
 			sourceTree = "<group>";
 		};
 		AFDAA41F29482BEA000A61CC /* AudioPlayer */ = {
@@ -795,6 +814,7 @@
 				AFC75B5328C850EA006932EC /* ReuseIdentifierProviding.swift in Sources */,
 				AFAB5B76291E25F900096EBF /* NCSectionHeaderView.swift in Sources */,
 				AF138E9428AB9EF300DFBE79 /* SceneDelegate.swift in Sources */,
+				AF48E40D29D41FAE0082B911 /* NCWebviewController.swift in Sources */,
 				AFC75B5028C84CDB006932EC /* NCBaseTableViewCell.swift in Sources */,
 				AF24DEA528E69B49008759F9 /* NCBaseModel.swift in Sources */,
 				AFAB5B74291CA5CA00096EBF /* NCSelectedAlbumCell.swift in Sources */,

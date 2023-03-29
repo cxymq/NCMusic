@@ -215,6 +215,7 @@ extension NCHomepageViewController: UITableViewDataSource {
         case 0:
             let cell: NCBannerCell = tableView.dequeueReusableCell(withIdentifier: NCBannerCell.standardReuseIdentifier, for: indexPath) as! NCBannerCell
             cell.carouselView.configureView(with: homepageBanners)
+            cell.delegate = self
             return cell
         case 1:
             let cell: NCHomepageBtnCell = tableView.dequeueReusableCell(withIdentifier: NCHomepageBtnCell.standardReuseIdentifier, for: indexPath) as! NCHomepageBtnCell
@@ -254,5 +255,13 @@ extension NCHomepageViewController: UITableViewDataSource {
 
 extension NCHomepageViewController: UITableViewDelegate {
     
+}
+
+extension NCHomepageViewController: NCBannerCellDelegate {
+    func carouseSelected(index: Int, urlStr: String) {
+        let webVC = NCWebviewController()
+        webVC.urlStr = urlStr.nilString()
+        self.navigationController?.pushViewController(webVC, animated: true)
+    }
 }
 
