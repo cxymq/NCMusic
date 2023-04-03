@@ -25,6 +25,7 @@
 		AF4F5F1128DC075E0062CE3A /* NCHomepageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F5F1028DC075E0062CE3A /* NCHomepageModel.swift */; };
 		AF86A84029505E43001B8C2E /* NCImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF86A83F29505E43001B8C2E /* NCImageExtension.swift */; };
 		AF86A8422950650A001B8C2E /* res.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AF86A8412950650A001B8C2E /* res.bundle */; };
+		AF940DA429DAF145006358BA /* NCSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF940DA329DAF145006358BA /* NCSideMenuViewController.swift */; };
 		AFAB5B652913DFF700096EBF /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB5B642913DFF700096EBF /* CarouselCell.swift */; };
 		AFAB5B672913E02E00096EBF /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB5B662913E02E00096EBF /* CarouselView.swift */; };
 		AFAB5B6B2914BDDF00096EBF /* NCUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB5B6A2914BDDE00096EBF /* NCUtilities.swift */; };
@@ -127,6 +128,7 @@
 		AF4F5F1028DC075E0062CE3A /* NCHomepageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCHomepageModel.swift; sourceTree = "<group>"; };
 		AF86A83F29505E43001B8C2E /* NCImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCImageExtension.swift; sourceTree = "<group>"; };
 		AF86A8412950650A001B8C2E /* res.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = res.bundle; sourceTree = "<group>"; };
+		AF940DA329DAF145006358BA /* NCSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCSideMenuViewController.swift; sourceTree = "<group>"; };
 		AFAB5B642913DFF700096EBF /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
 		AFAB5B662913E02E00096EBF /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		AFAB5B6A2914BDDE00096EBF /* NCUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCUtilities.swift; sourceTree = "<group>"; };
@@ -288,11 +290,12 @@
 			path = Webview;
 			sourceTree = "<group>";
 		};
-		AF4F5F0F28DAFC0A0062CE3A /* SideBar */ = {
+		AF940D9D29D58EA6006358BA /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				AF940DA329DAF145006358BA /* NCSideMenuViewController.swift */,
 			);
-			path = SideBar;
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		AFAB5B6C2918F9CD00096EBF /* Views */ = {
@@ -314,7 +317,6 @@
 			children = (
 				AFD9C56429D3E74900027903 /* ControlView */,
 				AFB08C4428F81BF5008A9B61 /* Banner */,
-				AF4F5F0F28DAFC0A0062CE3A /* SideBar */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -397,6 +399,7 @@
 		AFC75B6E28C899E0006932EC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				AF940D9D29D58EA6006358BA /* SideMenu */,
 				AF48E40B29D41F680082B911 /* Webview */,
 				AFDCBA45293073E5008C6C58 /* Player */,
 				AFB08C4328F81BC8008A9B61 /* Components */,
@@ -783,6 +786,7 @@
 				AFAB5B72291BB8F600096EBF /* NCBannerCell.swift in Sources */,
 				AFC75B8128C8BA82006932EC /* NCRecommendResModel.swift in Sources */,
 				AFC75B7328C89B3B006932EC /* NCBaseCollectionViewController.swift in Sources */,
+				AF940DA429DAF145006358BA /* NCSideMenuViewController.swift in Sources */,
 				AFDAA42129482C01000A61CC /* NCAudioPlayer.swift in Sources */,
 				AFC75B6528C88CD2006932EC /* NCNetService.swift in Sources */,
 				AFC75B8528C8BF03006932EC /* NCRecommendSongsViewController.swift in Sources */,

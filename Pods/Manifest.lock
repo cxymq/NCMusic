@@ -6,6 +6,7 @@ PODS:
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
+  - SideMenu (6.5.0)
   - SnapKit (5.6.0)
   - SwiftTheme (0.6.4)
 
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireImage (~> 4.1)
   - Moya (~> 15.0)
+  - SideMenu
   - SnapKit (~> 5.6.0)
   - SwiftTheme
 
@@ -21,6 +23,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - Moya
+    - SideMenu
     - SnapKit
     - SwiftTheme
 
@@ -28,9 +31,10 @@ SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftTheme: 007cbaf1f9e171caf6448a4657533e54c682b285
 
-PODFILE CHECKSUM: f47e94f94de026b66ae72977650dfc606b7d4cd5
+PODFILE CHECKSUM: df812cd9e70a797a43825f79b7b65a245de78e85
 
 COCOAPODS: 1.11.2

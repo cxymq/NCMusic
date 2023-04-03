@@ -21,4 +21,5 @@ target 'NCMusic' do
   pod 'Alamofire'
   pod 'AlamofireImage', '~> 4.1'
   pod 'SwiftTheme'
+  pod 'SideMenu' 
 end

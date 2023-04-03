@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SideMenu
 
 class NCHomepageViewController: NCBaseTableViewController {
     private var homepageBanners = [CarouselData]()
@@ -18,14 +19,24 @@ class NCHomepageViewController: NCBaseTableViewController {
     private var isRadar = false
     private var recommendLives = [EXTInfoElement]()
     private var isLives = false
+    
+    private var menu: SideMenuNavigationController?
 
     var carouselView = CarouselView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
+        menu = SideMenuNavigationController(rootViewController: NCSideMenuViewController())
+        menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: true)
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
+        SideMenuManager.default.leftMenuNavigationController = menu
 
         self.navigationItem.title = "首页"
+        let menuButton = UIBarButtonItem(image: .actions, style: .plain, target: self, action: #selector(showMenuButtonPressed(_:)))
+        navigationItem.leftBarButtonItem = menuButton
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -37,6 +48,10 @@ class NCHomepageViewController: NCBaseTableViewController {
 
         tableView.register(NCSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: NCSectionHeaderView.standardReuseIdentifier)
         loadData()
+    }
+    
+    @objc func showMenuButtonPressed(_ sender: UIBarButtonItem) {
+        present(menu!, animated: true)
     }
 
     //MARK: - get data
