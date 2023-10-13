@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		800CF63563A0C991087D0A7D /* Pods_NCMusicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD4CFF48C356EFBEADE639F /* Pods_NCMusicTests.framework */; };
 		8A27EADA7DD9B8D13825013C /* Pods_NCMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A4B666645A039C2E26CFCA /* Pods_NCMusic.framework */; };
+		AF137D052A6E7912006EF9D6 /* MENWPathMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF137D042A6E7912006EF9D6 /* MENWPathMonitor.swift */; };
 		AF138E9228AB9EF300DFBE79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF138E9128AB9EF300DFBE79 /* AppDelegate.swift */; };
 		AF138E9428AB9EF300DFBE79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF138E9328AB9EF300DFBE79 /* SceneDelegate.swift */; };
 		AF138E9628AB9EF300DFBE79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF138E9528AB9EF300DFBE79 /* ViewController.swift */; };
@@ -108,6 +109,7 @@
 		4B12ECCCC08893E0CF586582 /* Pods-NCMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NCMusic.release.xcconfig"; path = "Target Support Files/Pods-NCMusic/Pods-NCMusic.release.xcconfig"; sourceTree = "<group>"; };
 		A923F09D3824E43DBF27DC04 /* Pods-NCMusic-NCMusicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NCMusic-NCMusicUITests.debug.xcconfig"; path = "Target Support Files/Pods-NCMusic-NCMusicUITests/Pods-NCMusic-NCMusicUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAFEDF94ED776541B851D6B2 /* Pods-NCMusicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NCMusicTests.release.xcconfig"; path = "Target Support Files/Pods-NCMusicTests/Pods-NCMusicTests.release.xcconfig"; sourceTree = "<group>"; };
+		AF137D042A6E7912006EF9D6 /* MENWPathMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MENWPathMonitor.swift; sourceTree = "<group>"; };
 		AF138E8E28AB9EF300DFBE79 /* NCMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NCMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF138E9128AB9EF300DFBE79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF138E9328AB9EF300DFBE79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				AFC75B8C28D0857F006932EC /* NCStringExtension.swift */,
 				AF86A83F29505E43001B8C2E /* NCImageExtension.swift */,
 				AFAB5B6A2914BDDE00096EBF /* NCUtilities.swift */,
+				AF137D042A6E7912006EF9D6 /* MENWPathMonitor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -795,6 +798,7 @@
 				AFCFE31128D9A1DB00199F84 /* NCThemeManager.swift in Sources */,
 				AFC75B4C28C84C17006932EC /* NCBaseViewController.swift in Sources */,
 				AFCFE31B28D9AFA300199F84 /* NCSettingSwitchCell.swift in Sources */,
+				AF137D052A6E7912006EF9D6 /* MENWPathMonitor.swift in Sources */,
 				AFC75B8728C8BF1D006932EC /* NCRecommendSongsModel.swift in Sources */,
 				AFDCBA4D2930A8B9008C6C58 /* NCPlayerController.swift in Sources */,
 				AFAB5B652913DFF700096EBF /* CarouselCell.swift in Sources */,
