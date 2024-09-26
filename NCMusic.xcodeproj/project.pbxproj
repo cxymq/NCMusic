@@ -24,6 +24,13 @@
 		AF48E40D29D41FAE0082B911 /* NCWebviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48E40C29D41FAE0082B911 /* NCWebviewController.swift */; };
 		AF4F5F0E28DABFA00062CE3A /* NCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F5F0D28DABFA00062CE3A /* NCNavigationController.swift */; };
 		AF4F5F1128DC075E0062CE3A /* NCHomepageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F5F1028DC075E0062CE3A /* NCHomepageModel.swift */; };
+		AF622B402CA5449B009B7E4A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF622B3F2CA5449B009B7E4A /* WidgetKit.framework */; };
+		AF622B422CA5449B009B7E4A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF622B412CA5449B009B7E4A /* SwiftUI.framework */; };
+		AF622B452CA5449B009B7E4A /* NCWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF622B442CA5449B009B7E4A /* NCWidgetBundle.swift */; };
+		AF622B472CA5449B009B7E4A /* NCWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF622B462CA5449B009B7E4A /* NCWidget.swift */; };
+		AF622B492CA5449B009B7E4A /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF622B482CA5449B009B7E4A /* AppIntent.swift */; };
+		AF622B4B2CA5449C009B7E4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF622B4A2CA5449C009B7E4A /* Assets.xcassets */; };
+		AF622B4F2CA5449C009B7E4A /* NCWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AF622B3E2CA5449B009B7E4A /* NCWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AF86A84029505E43001B8C2E /* NCImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF86A83F29505E43001B8C2E /* NCImageExtension.swift */; };
 		AF86A8422950650A001B8C2E /* res.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AF86A8412950650A001B8C2E /* res.bundle */; };
 		AF940DA429DAF145006358BA /* NCSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF940DA329DAF145006358BA /* NCSideMenuViewController.swift */; };
@@ -84,9 +91,27 @@
 			remoteGlobalIDString = AF138E8D28AB9EF300DFBE79;
 			remoteInfo = NCMusic;
 		};
+		AF622B4D2CA5449C009B7E4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF138E8628AB9EF300DFBE79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF622B3D2CA5449B009B7E4A;
+			remoteInfo = NCWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		AF622B502CA5449C009B7E4A /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AF622B4F2CA5449C009B7E4A /* NCWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFC75B5828C88132006932EC /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -128,6 +153,14 @@
 		AF48E40C29D41FAE0082B911 /* NCWebviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCWebviewController.swift; sourceTree = "<group>"; };
 		AF4F5F0D28DABFA00062CE3A /* NCNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCNavigationController.swift; sourceTree = "<group>"; };
 		AF4F5F1028DC075E0062CE3A /* NCHomepageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCHomepageModel.swift; sourceTree = "<group>"; };
+		AF622B3E2CA5449B009B7E4A /* NCWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NCWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF622B3F2CA5449B009B7E4A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		AF622B412CA5449B009B7E4A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		AF622B442CA5449B009B7E4A /* NCWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCWidgetBundle.swift; sourceTree = "<group>"; };
+		AF622B462CA5449B009B7E4A /* NCWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCWidget.swift; sourceTree = "<group>"; };
+		AF622B482CA5449B009B7E4A /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		AF622B4A2CA5449C009B7E4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF622B4C2CA5449C009B7E4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF86A83F29505E43001B8C2E /* NCImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCImageExtension.swift; sourceTree = "<group>"; };
 		AF86A8412950650A001B8C2E /* res.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = res.bundle; sourceTree = "<group>"; };
 		AF940DA329DAF145006358BA /* NCSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCSideMenuViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +235,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AF622B3B2CA5449B009B7E4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF622B422CA5449B009B7E4A /* SwiftUI.framework in Frameworks */,
+				AF622B402CA5449B009B7E4A /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -211,6 +253,7 @@
 				AF138E9028AB9EF300DFBE79 /* NCMusic */,
 				AF138EA728AB9EF400DFBE79 /* NCMusicTests */,
 				AF138EB128AB9EF500DFBE79 /* NCMusicUITests */,
+				AF622B432CA5449B009B7E4A /* NCWidget */,
 				AF138E8F28AB9EF300DFBE79 /* Products */,
 				AFC75B5428C88132006932EC /* Frameworks */,
 				ED647C6E42B0F10EF2257F9F /* Pods */,
@@ -223,6 +266,7 @@
 				AF138E8E28AB9EF300DFBE79 /* NCMusic.app */,
 				AF138EA428AB9EF400DFBE79 /* NCMusicTests.xctest */,
 				AF138EAE28AB9EF500DFBE79 /* NCMusicUITests.xctest */,
+				AF622B3E2CA5449B009B7E4A /* NCWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,6 +334,18 @@
 				AF48E40C29D41FAE0082B911 /* NCWebviewController.swift */,
 			);
 			path = Webview;
+			sourceTree = "<group>";
+		};
+		AF622B432CA5449B009B7E4A /* NCWidget */ = {
+			isa = PBXGroup;
+			children = (
+				AF622B442CA5449B009B7E4A /* NCWidgetBundle.swift */,
+				AF622B462CA5449B009B7E4A /* NCWidget.swift */,
+				AF622B482CA5449B009B7E4A /* AppIntent.swift */,
+				AF622B4A2CA5449C009B7E4A /* Assets.xcassets */,
+				AF622B4C2CA5449C009B7E4A /* Info.plist */,
+			);
+			path = NCWidget;
 			sourceTree = "<group>";
 		};
 		AF940D9D29D58EA6006358BA /* SideMenu */ = {
@@ -371,6 +427,8 @@
 				14A4B666645A039C2E26CFCA /* Pods_NCMusic.framework */,
 				1D46ED4C9B906150BF59F619 /* Pods_NCMusic_NCMusicUITests.framework */,
 				3DD4CFF48C356EFBEADE639F /* Pods_NCMusicTests.framework */,
+				AF622B3F2CA5449B009B7E4A /* WidgetKit.framework */,
+				AF622B412CA5449B009B7E4A /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -547,10 +605,12 @@
 				AF138E8C28AB9EF300DFBE79 /* Resources */,
 				AFC75B5828C88132006932EC /* Embed Frameworks */,
 				5C166AA8C6F9AC66D5EFFABD /* [CP] Embed Pods Frameworks */,
+				AF622B502CA5449C009B7E4A /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AF622B4E2CA5449C009B7E4A /* PBXTargetDependency */,
 			);
 			name = NCMusic;
 			productName = NCMusic;
@@ -596,6 +656,23 @@
 			productReference = AF138EAE28AB9EF500DFBE79 /* NCMusicUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		AF622B3D2CA5449B009B7E4A /* NCWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF622B532CA5449C009B7E4A /* Build configuration list for PBXNativeTarget "NCWidgetExtension" */;
+			buildPhases = (
+				AF622B3A2CA5449B009B7E4A /* Sources */,
+				AF622B3B2CA5449B009B7E4A /* Frameworks */,
+				AF622B3C2CA5449B009B7E4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NCWidgetExtension;
+			productName = NCWidgetExtension;
+			productReference = AF622B3E2CA5449B009B7E4A /* NCWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -604,7 +681,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				CLASSPREFIX = NC;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					AF138E8D28AB9EF300DFBE79 = {
@@ -617,6 +694,9 @@
 					AF138EAD28AB9EF500DFBE79 = {
 						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = AF138E8D28AB9EF300DFBE79;
+					};
+					AF622B3D2CA5449B009B7E4A = {
+						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
@@ -636,6 +716,7 @@
 				AF138E8D28AB9EF300DFBE79 /* NCMusic */,
 				AF138EA328AB9EF400DFBE79 /* NCMusicTests */,
 				AF138EAD28AB9EF500DFBE79 /* NCMusicUITests */,
+				AF622B3D2CA5449B009B7E4A /* NCWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -669,6 +750,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF622B3C2CA5449B009B7E4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF622B4B2CA5449C009B7E4A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -846,6 +935,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AF622B3A2CA5449B009B7E4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF622B472CA5449B009B7E4A /* NCWidget.swift in Sources */,
+				AF622B452CA5449B009B7E4A /* NCWidgetBundle.swift in Sources */,
+				AF622B492CA5449B009B7E4A /* AppIntent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -858,6 +957,11 @@
 			isa = PBXTargetDependency;
 			target = AF138E8D28AB9EF300DFBE79 /* NCMusic */;
 			targetProxy = AF138EAF28AB9EF500DFBE79 /* PBXContainerItemProxy */;
+		};
+		AF622B4E2CA5449C009B7E4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF622B3D2CA5449B009B7E4A /* NCWidgetExtension */;
+			targetProxy = AF622B4D2CA5449C009B7E4A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -999,6 +1103,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3F9E5D54C38FAE2CB347F369 /* Pods-NCMusic.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1031,6 +1136,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4B12ECCCC08893E0CF586582 /* Pods-NCMusic.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1139,6 +1245,73 @@
 			};
 			name = Release;
 		};
+		AF622B512CA5449C009B7E4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EJ429UWLN6;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NCWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NCWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nazimai.NCMusic.NCWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AF622B522CA5449C009B7E4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EJ429UWLN6;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NCWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NCWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nazimai.NCMusic.NCWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1174,6 +1347,15 @@
 			buildConfigurations = (
 				AF138EBF28AB9EF500DFBE79 /* Debug */,
 				AF138EC028AB9EF500DFBE79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF622B532CA5449C009B7E4A /* Build configuration list for PBXNativeTarget "NCWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF622B512CA5449C009B7E4A /* Debug */,
+				AF622B522CA5449C009B7E4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
