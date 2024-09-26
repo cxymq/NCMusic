@@ -8,6 +8,7 @@
 import UIKit
 
 class NCSideMenuViewController: UITableViewController {
+    private let dataSource = ["消息中心", "设置", "深色模式", "定时关闭", "青少年模式", "音乐闹钟", "退出登录"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,15 +23,19 @@ class NCSideMenuViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return dataSource.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        cell.textLabel?.text = String("\(indexPath.row + 1)")
+        cell.textLabel?.text = dataSource[indexPath.row]
 
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 
 }
