@@ -161,6 +161,8 @@
 		AF622B482CA5449B009B7E4A /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		AF622B4A2CA5449C009B7E4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF622B4C2CA5449C009B7E4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF622B542CA5455F009B7E4A /* NCMusic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NCMusic.entitlements; sourceTree = "<group>"; };
+		AF622B552CA5459B009B7E4A /* NCWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NCWidgetExtension.entitlements; sourceTree = "<group>"; };
 		AF86A83F29505E43001B8C2E /* NCImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCImageExtension.swift; sourceTree = "<group>"; };
 		AF86A8412950650A001B8C2E /* res.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = res.bundle; sourceTree = "<group>"; };
 		AF940DA329DAF145006358BA /* NCSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCSideMenuViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 		AF138E8528AB9EF300DFBE79 = {
 			isa = PBXGroup;
 			children = (
+				AF622B552CA5459B009B7E4A /* NCWidgetExtension.entitlements */,
 				AF138E9028AB9EF300DFBE79 /* NCMusic */,
 				AF138EA728AB9EF400DFBE79 /* NCMusicTests */,
 				AF138EB128AB9EF500DFBE79 /* NCMusicUITests */,
@@ -274,6 +277,7 @@
 		AF138E9028AB9EF300DFBE79 /* NCMusic */ = {
 			isa = PBXGroup;
 			children = (
+				AF622B542CA5455F009B7E4A /* NCMusic.entitlements */,
 				AF138E9128AB9EF300DFBE79 /* AppDelegate.swift */,
 				AF138E9328AB9EF300DFBE79 /* SceneDelegate.swift */,
 				AF138E9528AB9EF300DFBE79 /* ViewController.swift */,
@@ -1106,6 +1110,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NCMusic/NCMusic.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = EJ429UWLN6;
@@ -1139,6 +1144,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NCMusic/NCMusic.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = EJ429UWLN6;
@@ -1252,6 +1258,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = NCWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = EJ429UWLN6;
@@ -1286,6 +1293,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = NCWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = EJ429UWLN6;
