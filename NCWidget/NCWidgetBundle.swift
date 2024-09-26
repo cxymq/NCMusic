@@ -12,5 +12,6 @@ import SwiftUI
 struct NCWidgetBundle: WidgetBundle {
     var body: some Widget {
         NCWidget()
+        NCToolsWidget()
     }
 }

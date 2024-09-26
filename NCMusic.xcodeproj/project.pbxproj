@@ -73,6 +73,8 @@
 		AFDAA3C529482892000A61CC /* 039655.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AFDAA3C429482892000A61CC /* 039655.mp3 */; };
 		AFDAA42129482C01000A61CC /* NCAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDAA42029482C01000A61CC /* NCAudioPlayer.swift */; };
 		AFDCBA4D2930A8B9008C6C58 /* NCPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDCBA4C2930A8B9008C6C58 /* NCPlayerController.swift */; };
+		AFE05AC92CA54FCD002E2CDC /* ToolsAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE05AC82CA54FCD002E2CDC /* ToolsAppIntent.swift */; };
+		AFE05ACC2CA55024002E2CDC /* NCToolsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE05ACB2CA55024002E2CDC /* NCToolsWidget.swift */; };
 		C537938A08B70FEDAF2C4A07 /* Pods_NCMusic_NCMusicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D46ED4C9B906150BF59F619 /* Pods_NCMusic_NCMusicUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -210,6 +212,8 @@
 		AFDAA3C429482892000A61CC /* 039655.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 039655.mp3; sourceTree = "<group>"; };
 		AFDAA42029482C01000A61CC /* NCAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCAudioPlayer.swift; sourceTree = "<group>"; };
 		AFDCBA4C2930A8B9008C6C58 /* NCPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCPlayerController.swift; sourceTree = "<group>"; };
+		AFE05AC82CA54FCD002E2CDC /* ToolsAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsAppIntent.swift; sourceTree = "<group>"; };
+		AFE05ACB2CA55024002E2CDC /* NCToolsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCToolsWidget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +347,7 @@
 		AF622B432CA5449B009B7E4A /* NCWidget */ = {
 			isa = PBXGroup;
 			children = (
+				AFE05ACA2CA54FD3002E2CDC /* ToolsWidget */,
 				AF622B442CA5449B009B7E4A /* NCWidgetBundle.swift */,
 				AF622B462CA5449B009B7E4A /* NCWidget.swift */,
 				AF622B482CA5449B009B7E4A /* AppIntent.swift */,
@@ -581,6 +586,15 @@
 			children = (
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		AFE05ACA2CA54FD3002E2CDC /* ToolsWidget */ = {
+			isa = PBXGroup;
+			children = (
+				AFE05AC82CA54FCD002E2CDC /* ToolsAppIntent.swift */,
+				AFE05ACB2CA55024002E2CDC /* NCToolsWidget.swift */,
+			);
+			path = ToolsWidget;
 			sourceTree = "<group>";
 		};
 		ED647C6E42B0F10EF2257F9F /* Pods */ = {
@@ -943,9 +957,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE05ACC2CA55024002E2CDC /* NCToolsWidget.swift in Sources */,
 				AF622B472CA5449B009B7E4A /* NCWidget.swift in Sources */,
 				AF622B452CA5449B009B7E4A /* NCWidgetBundle.swift in Sources */,
 				AF622B492CA5449B009B7E4A /* AppIntent.swift in Sources */,
+				AFE05AC92CA54FCD002E2CDC /* ToolsAppIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1268,7 +1284,7 @@
 				INFOPLIST_FILE = NCWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NCWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1303,7 +1319,7 @@
 				INFOPLIST_FILE = NCWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NCWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
